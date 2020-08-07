@@ -1,0 +1,7 @@
+Note cua? PA:
+Sounds:
+https://www.youtube.com/watch?v=9WeDQHi6sJs&fbclid=IwAR3fZ6HdVxEJYaGoDLwctm8LGzDdo0HPiOVVBubSgosRvkir7SxvSD2y9n8
+Multiple Threads:
+https://www.youtube.com/watch?v=wXBcwHwIt_I
+Draw/Graphic: vẽ = ký tự unicode
+Animal/Vechicle animation: dùng lần lượt 2 frame
