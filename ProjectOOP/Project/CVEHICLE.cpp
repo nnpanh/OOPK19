@@ -98,14 +98,14 @@ CONTROL_VEHICLE::CONTROL_VEHICLE()
 CONTROL_VEHICLE::~CONTROL_VEHICLE(){}
 void CONTROL_VEHICLE::MoveAll()
 {
-	clearScreen;
+	system("CLS");
 	int number_of_Vehicle = Running_Vehicle.size();
 	for (int i = 0; i < number_of_Vehicle; i++)
 	{
 		cout << "Do sth lol";
 	}
 }
-
+/*
 void CONTROL_VEHICLE::update_Vehicle_number(int level)
 {
 	int add = level - cur_level;
@@ -168,10 +168,10 @@ void CONTROL_VEHICLE::update_Vehicle_number(int level)
 
 void CONTROL_VEHICLE::Run(int state,int level) 
 {
-	/*state: 1.Running casually
-	2. Crash
-	3. Level up
-	*/
+	//state: 1.Running casually
+	//2. Crash
+	//3. Level up
+	
 	update_level(level);
 	switch (state)
 	{
@@ -194,3 +194,4 @@ void CONTROL_VEHICLE::Run(int state,int level)
 	}
 	}
 }
+*/

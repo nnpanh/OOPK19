@@ -33,7 +33,7 @@ ProgramFiles(x86) = C:\Program Files (x86)
 ProgramW6432 = C:\Program Files
 PSModulePath = C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
 PUBLIC = C:\Users\Public
-ServiceHubLogSessionKey = 8CAAF615
+ServiceHubLogSessionKey = AA3A7686
 SESSIONNAME = Console
 SystemDrive = C:
 SystemRoot = C:\WINDOWS
@@ -53,54 +53,5 @@ VSLANG = 1033
 VSSKUEDITION = Community
 windir = C:\WINDOWS
 
-  CVEHICLE.cpp
-D:\OOPK19\ProjectOOP\Project\CVEHICLE.cpp(101,2): warning C4551: function call missing argument list
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\xmemory(670): error C2259: 'CVEHICLE': cannot instantiate abstract class
-D:\OOPK19\ProjectOOP\Project\CVEHICLE.h(17): message : see declaration of 'CVEHICLE'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\xmemory(670): message : due to following members:
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\xmemory(670): message : 'void CVEHICLE::Move(int,int)': is abstract
-D:\OOPK19\ProjectOOP\Project\CVEHICLE.h(23): message : see declaration of 'CVEHICLE::Move'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\xmemory(670): message : 'void CVEHICLE::draw(void)': is abstract
-D:\OOPK19\ProjectOOP\Project\CVEHICLE.h(24): message : see declaration of 'CVEHICLE::draw'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\vector(682): message : see reference to function template instantiation 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,const _Ty&>(_Alloc &,_Objty *const ,const _Ty &)' being compiled
-          with
-          [
-              _Alloc=std::allocator<CVEHICLE>,
-              _Ty=CVEHICLE,
-              _Objty=CVEHICLE
-          ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\vector(687): message : see reference to function template instantiation 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,const _Ty&>(_Alloc &,_Objty *const ,const _Ty &)' being compiled
-          with
-          [
-              _Alloc=std::allocator<CVEHICLE>,
-              _Ty=CVEHICLE,
-              _Objty=CVEHICLE
-          ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\vector(700): message : see reference to function template instantiation 'void std::vector<CVEHICLE,std::allocator<CVEHICLE>>::_Emplace_back_with_unused_capacity<const _Ty&>(const _Ty &)' being compiled
-          with
-          [
-              _Ty=CVEHICLE
-          ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\vector(717): message : see reference to function template instantiation 'void std::vector<CVEHICLE,std::allocator<CVEHICLE>>::emplace_back<const _Ty&>(const _Ty &)' being compiled
-          with
-          [
-              _Ty=CVEHICLE
-          ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\vector(716): message : while compiling class template member function 'void std::vector<CVEHICLE,std::allocator<CVEHICLE>>::push_back(const _Ty &)'
-          with
-          [
-              _Ty=CVEHICLE
-          ]
-D:\OOPK19\ProjectOOP\Project\CVEHICLE.cpp(117): message : see reference to function template instantiation 'void std::vector<CVEHICLE,std::allocator<CVEHICLE>>::push_back(const _Ty &)' being compiled
-          with
-          [
-              _Ty=CVEHICLE
-          ]
-D:\OOPK19\ProjectOOP\Project\CVEHICLE.h(55): message : see reference to class template instantiation 'std::vector<CVEHICLE,std::allocator<CVEHICLE>>' being compiled
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\xmemory(671,82): error C2259: 'CVEHICLE': cannot instantiate abstract class
-D:\OOPK19\ProjectOOP\Project\CVEHICLE.h(17): message : see declaration of 'CVEHICLE'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\xmemory(671,82): message : due to following members:
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\xmemory(671,82): message : 'void CVEHICLE::Move(int,int)': is abstract
-D:\OOPK19\ProjectOOP\Project\CVEHICLE.h(23): message : see declaration of 'CVEHICLE::Move'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\xmemory(671,82): message : 'void CVEHICLE::draw(void)': is abstract
-D:\OOPK19\ProjectOOP\Project\CVEHICLE.h(24): message : see declaration of 'CVEHICLE::draw'
+  main.cpp
+  Project.vcxproj -> D:\OOPK19\ProjectOOP\Debug\Project.exe
