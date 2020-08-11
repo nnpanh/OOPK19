@@ -1,0 +1,106 @@
+﻿Environment at start of build:
+ALLUSERSPROFILE = C:\ProgramData
+APPDATA = C:\Users\USER\AppData\Roaming
+CommonProgramFiles = C:\Program Files (x86)\Common Files
+CommonProgramFiles(x86) = C:\Program Files (x86)\Common Files
+CommonProgramW6432 = C:\Program Files\Common Files
+COMPUTERNAME = MSI
+ComSpec = C:\WINDOWS\system32\cmd.exe
+configsetroot = C:\WINDOWS\ConfigSetRoot
+DriverData = C:\Windows\System32\Drivers\DriverData
+FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
+FPS_BROWSER_USER_PROFILE_STRING = Default
+HOMEDRIVE = C:
+HOMEPATH = \Users\USER
+LOCALAPPDATA = C:\Users\USER\AppData\Local
+LOGONSERVER = \\MSI
+MSBuildLoadMicrosoftTargetsReadOnly = true
+NUMBER_OF_PROCESSORS = 12
+OneDrive = C:\Users\USER\OneDrive
+OneDriveConsumer = C:\Users\USER\OneDrive
+OS = Windows_NT
+Path = C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;%SYSTEMROOT%\System32\OpenSSH\;C:\Users\USER\AppData\Local\Microsoft\WindowsApps;C:\Users\USER\AppData\Local\GitHubDesktop\bin
+PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+PkgDefApplicationConfigFile = C:\Users\USER\AppData\Local\Microsoft\VisualStudio\16.0_eb653c50\devenv.exe.config
+PROCESSOR_ARCHITECTURE = x86
+PROCESSOR_ARCHITEW6432 = AMD64
+PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 10, GenuineIntel
+PROCESSOR_LEVEL = 6
+PROCESSOR_REVISION = 9e0a
+ProgramData = C:\ProgramData
+ProgramFiles = C:\Program Files (x86)
+ProgramFiles(x86) = C:\Program Files (x86)
+ProgramW6432 = C:\Program Files
+PSModulePath = C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+PUBLIC = C:\Users\Public
+ServiceHubLogSessionKey = 8CAAF615
+SESSIONNAME = Console
+SystemDrive = C:
+SystemRoot = C:\WINDOWS
+TEMP = C:\Users\USER\AppData\Local\Temp
+ThreadedWaitDialogDpiContext = -4
+TMP = C:\Users\USER\AppData\Local\Temp
+USERDOMAIN = MSI
+USERDOMAIN_ROAMINGPROFILE = MSI
+USERNAME = USER
+USERPROFILE = C:\Users\USER
+VisualStudioDir = C:\Users\USER\OneDrive\Tài liệu\Visual Studio 2019
+VisualStudioEdition = Microsoft Visual Studio Community 2019
+VisualStudioVersion = 16.0
+VSAPPIDDIR = C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\
+VSAPPIDNAME = devenv.exe
+VSLANG = 1033
+VSSKUEDITION = Community
+windir = C:\WINDOWS
+
+  CVEHICLE.cpp
+D:\OOPK19\ProjectOOP\Project\CVEHICLE.cpp(101,2): warning C4551: function call missing argument list
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\xmemory(670): error C2259: 'CVEHICLE': cannot instantiate abstract class
+D:\OOPK19\ProjectOOP\Project\CVEHICLE.h(17): message : see declaration of 'CVEHICLE'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\xmemory(670): message : due to following members:
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\xmemory(670): message : 'void CVEHICLE::Move(int,int)': is abstract
+D:\OOPK19\ProjectOOP\Project\CVEHICLE.h(23): message : see declaration of 'CVEHICLE::Move'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\xmemory(670): message : 'void CVEHICLE::draw(void)': is abstract
+D:\OOPK19\ProjectOOP\Project\CVEHICLE.h(24): message : see declaration of 'CVEHICLE::draw'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\vector(682): message : see reference to function template instantiation 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,const _Ty&>(_Alloc &,_Objty *const ,const _Ty &)' being compiled
+          with
+          [
+              _Alloc=std::allocator<CVEHICLE>,
+              _Ty=CVEHICLE,
+              _Objty=CVEHICLE
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\vector(687): message : see reference to function template instantiation 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,const _Ty&>(_Alloc &,_Objty *const ,const _Ty &)' being compiled
+          with
+          [
+              _Alloc=std::allocator<CVEHICLE>,
+              _Ty=CVEHICLE,
+              _Objty=CVEHICLE
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\vector(700): message : see reference to function template instantiation 'void std::vector<CVEHICLE,std::allocator<CVEHICLE>>::_Emplace_back_with_unused_capacity<const _Ty&>(const _Ty &)' being compiled
+          with
+          [
+              _Ty=CVEHICLE
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\vector(717): message : see reference to function template instantiation 'void std::vector<CVEHICLE,std::allocator<CVEHICLE>>::emplace_back<const _Ty&>(const _Ty &)' being compiled
+          with
+          [
+              _Ty=CVEHICLE
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\vector(716): message : while compiling class template member function 'void std::vector<CVEHICLE,std::allocator<CVEHICLE>>::push_back(const _Ty &)'
+          with
+          [
+              _Ty=CVEHICLE
+          ]
+D:\OOPK19\ProjectOOP\Project\CVEHICLE.cpp(117): message : see reference to function template instantiation 'void std::vector<CVEHICLE,std::allocator<CVEHICLE>>::push_back(const _Ty &)' being compiled
+          with
+          [
+              _Ty=CVEHICLE
+          ]
+D:\OOPK19\ProjectOOP\Project\CVEHICLE.h(55): message : see reference to class template instantiation 'std::vector<CVEHICLE,std::allocator<CVEHICLE>>' being compiled
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\xmemory(671,82): error C2259: 'CVEHICLE': cannot instantiate abstract class
+D:\OOPK19\ProjectOOP\Project\CVEHICLE.h(17): message : see declaration of 'CVEHICLE'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\xmemory(671,82): message : due to following members:
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\xmemory(671,82): message : 'void CVEHICLE::Move(int,int)': is abstract
+D:\OOPK19\ProjectOOP\Project\CVEHICLE.h(23): message : see declaration of 'CVEHICLE::Move'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\xmemory(671,82): message : 'void CVEHICLE::draw(void)': is abstract
+D:\OOPK19\ProjectOOP\Project\CVEHICLE.h(24): message : see declaration of 'CVEHICLE::draw'
