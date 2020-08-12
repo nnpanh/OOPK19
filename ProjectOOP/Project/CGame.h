@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <conio.h>
-#include <Windows.h> // Main of this board
+#include <Windows.h> // Main of the board
 #include <time.h>
 #include <stdlib.h>
 #include <string>
