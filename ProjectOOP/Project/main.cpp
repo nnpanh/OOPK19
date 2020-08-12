@@ -7,20 +7,33 @@ int main()
 	CVEHICLE *myVehicle1;
 	myVehicle1 = new CTRUCK;
 	CVEHICLE* myVehicle2;
-	myVehicle2 = new CTRUCK;
+	myVehicle2 = new CCAR;
+	CONTROL_VEHICLE myVehicle;
 	//thread vehicle(doSth);
 	//vehicle.join();
 	do
 	{
+		/*
 		system("CLS");
+		myVehicle1->Move(4, 4);
+		myVehicle2->Move(18, 4);
+		wcout << endl << endl;
+		system("pause");
+		myVehicle1->erase();
+		myVehicle2->erase();
+		wcout << endl << endl;
+		system("pause");
+		*/
+		myVehicle.Run(3, 2,5,5,5,10);
 		Sleep(200);
-		myVehicle2->Move(4, 4);
-		myVehicle1->Move(18, 4);
+		myVehicle.EraseAll(5,5,5,10);
 		Sleep(200);
-		system("CLS");
-		myVehicle2->Move(18+14, 4);
-		myVehicle1->Move(18+28,4);
+		myVehicle.Run(3, 2,10,5,10,10);
 		Sleep(200);
+		myVehicle.EraseAll(10,5,10,10);
+		Sleep(200);
+
+		
 
 	} while (GetAsyncKeyState(VK_ESCAPE) == 0);
 	return 0;

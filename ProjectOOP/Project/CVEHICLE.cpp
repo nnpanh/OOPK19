@@ -1,12 +1,10 @@
 #include "CVEHICLE.h"
 //CAR
-CCAR::CCAR() {
+CCAR::CCAR():CVEHICLE() {
 	length = 3; width = 8;
-	mX = 0; mY = 0;
 }
-CCAR::CCAR(int x, int y) {
+CCAR::CCAR(int x, int y): CVEHICLE(x,y) {
 	length = 3; width = 8;
-	mX = x; mY = y;
 }
 CCAR::~CCAR() {
 	mX = -1; mY = -1;
@@ -22,26 +20,36 @@ void CCAR::draw()
 	GotoXY(mX + 4, mY + 2);
 	wcout << L"\u25cf";
 }
+void CCAR::erase()
+{
+	GotoXY(mX, mY);
+	wcout << L"\u2003\u2003\u2003\u2003";
+	GotoXY(mX - 2, mY + 1);
+	wcout << L"\u2003\u2003\u2003\u2003\u2003\u2003\u2003\u2003";
+	GotoXY(mX - 1, mY + 2);
+	wcout << L"\u2003";
+	GotoXY(mX + 4, mY + 2);
+	wcout << L"\u2003";
+}
+
 void CCAR::Move(int X, int Y)
 {
 	mX = X; mY = Y;
 	draw();
+	
 }
 //TRUCK
-CTRUCK::CTRUCK() {
+CTRUCK::CTRUCK():CVEHICLE() {
 	length = 3; width = 7;
-	mX = 0; mY = 0;
 }
-CTRUCK::CTRUCK(int x, int y) {
+CTRUCK::CTRUCK(int x, int y) : CVEHICLE(x, y) {
 	length = 3; width = 7;
-	mX = x; mY = y;
 }
 CTRUCK::~CTRUCK() {
 	mX = -1; mY = -1;
 }
 void CTRUCK::draw()
 {
-
 	GotoXY(mX, mY);
 	wcout << L"\u2588\u2588\u2588\u2588\u2588";
 	GotoXY(mX, mY + 1);
@@ -52,10 +60,39 @@ void CTRUCK::draw()
 	wcout << L"\u25cf";
 
 }
-void CTRUCK::Move(int X, int Y)
+void CTRUCK::erase()
 {
+	GotoXY(mX, mY);
+	wcout << L"\u2003\u2003\u2003\u2003\u2003";
+	GotoXY(mX, mY + 1);
+	wcout << L"\u2003\u2003\u2003\u2003\u2003\u2003\u2003";
+	GotoXY(mX + 1, mY + 2);
+	wcout << L"\u2003";
+	GotoXY(mX + 4, mY + 2);
+	wcout << L"\u2003";
+}
+
+
+void CTRUCK::Move(int X, int Y)
+{	
+	
 	mX = X; mY = Y;
 	draw();
+	
+}
+
+//VEHICLE
+CVEHICLE::CVEHICLE()
+{
+	mX = 0; mY = 0;
+}
+CVEHICLE::CVEHICLE(int x, int y)
+{
+	mX = x; mY = y;
+}
+bool CONTROL_VEHICLE::state(bool isDead) {
+	if (isDead) crash = 1;
+	return isDead;
 }
 //SUBFUNC
 void GotoXY(int x, int y) {
@@ -83,82 +120,140 @@ void FixConsoleWindow() { //Lock console ratio
 
 CONTROL_VEHICLE::CONTROL_VEHICLE()
 {
+	crash = 0;
 	cur_CAR_NUM = 0;
 	cur_TRUCK_NUM = 0;
 	cur_level = 0;
+	CAR_NUM[0] = 0; //LEVEL 0
+	TRUCK_NUM[0] = 0;
 	ifstream f;
 	f.open("VEHICLE.txt");
 	if (!f.is_open()) cout << "Failed to load file";
 	else {
-		for (int i = 0; i < MAXLEVEL; i++)
+		for (int i = 1; i <= MAXLEVEL; i++) 
 			f >> CAR_NUM[i] >> TRUCK_NUM[i];
 		f.close();
 	}
 }
 CONTROL_VEHICLE::~CONTROL_VEHICLE(){}
-void CONTROL_VEHICLE::MoveAll()
+void CONTROL_VEHICLE::MoveAll(int xTruck, int yTruck, int xCar, int yCar)
 {
 	system("CLS");
+	auto count_TRUCK = 0;
+	auto count_CAR = 0;
+	int width = 0;
 	int number_of_Vehicle = Running_Vehicle.size();
+
 	for (int i = 0; i < number_of_Vehicle; i++)
 	{
-		cout << "Do sth lol";
+		switch (Running_Vehicle[i]->getType()) 
+		{
+		case 1: //RUN THIS TRUCK
+		{
+			width = Running_Vehicle[i]->getWidth();
+			int new_width = xTruck + (width+space)*count_TRUCK;
+			if (new_width > MAXWIDTH) cout << "DEAD CMNR";
+			else Running_Vehicle[i]->Move(new_width, yTruck);
+			count_TRUCK++;
+			break;
+		}
+		case 2: //RUN THIS CAR
+		{
+			width = Running_Vehicle[i]->getWidth();
+			int new_width = xCar + (width + space) * count_CAR;
+			if (new_width > MAXWIDTH) cout << "DEAD2";
+			else Running_Vehicle[i]->Move(new_width, yCar);
+			count_CAR++;
+			break;
+
+		}
+		}
 	}
 }
-/*
-void CONTROL_VEHICLE::update_Vehicle_number(int level)
+void CONTROL_VEHICLE::EraseAll(int xTruck, int yTruck, int xCar, int yCar)
+{
+	system("CLS");
+	auto count_TRUCK = 0;
+	auto count_CAR = 0;
+	int width = 0;
+	int number_of_Vehicle = Running_Vehicle.size();
+
+	for (int i = 0; i < number_of_Vehicle; i++)
+	{
+		switch (Running_Vehicle[i]->getType())
+		{
+		case 1: //RUN THIS TRUCK
+		{
+			width = Running_Vehicle[i]->getWidth();
+			int new_width = xTruck + (width + space) * count_TRUCK;
+			if (new_width > MAXWIDTH) cout << "HIT THE BORDER";
+			else Running_Vehicle[i]->erase();
+			count_TRUCK++;
+			break;
+		}
+		case 2: //RUN THIS CAR
+		{
+			width = Running_Vehicle[i]->getWidth();
+			int new_width = xCar + (width + space) * count_CAR;
+			if (new_width > MAXWIDTH) cout << "DEAD?";
+			else Running_Vehicle[i]->erase();
+			count_CAR++;
+			break;
+
+		}
+		}
+	}
+}
+void CONTROL_VEHICLE::update_Vehicle_level(int level)
 {
 	int add = level - cur_level;
-	if (add > 0)
+	if (add > 0) //LEVEL UP - ADD MORE VEHICLE
 	{
 		while (cur_CAR_NUM < CAR_NUM[level])
 		{
-			CVEHICLE* newCar = new CCAR;
-			Running_Vehicle.push_back(*newCar);
+			Running_Vehicle.push_back(new CCAR);
 			cur_CAR_NUM++;
 		}
 		while (cur_TRUCK_NUM < TRUCK_NUM[level])
 		{
-			CVEHICLE* newTruck = new CTRUCK;
-			Running_Vehicle.push_back(*newTruck);
+	
+			Running_Vehicle.push_back(new CTRUCK);
 			cur_TRUCK_NUM++;
 		}
 	}
-	else 
+	else //LEVEL DOWN - ERASE VEHICLE
 	{
-		auto i = Running_Vehicle.cbegin();
-		int loop = 0;
-		while (cur_CAR_NUM > CAR_NUM[level])
+		auto i = 0;
+		bool object_erased = 1;
+		while (object_erased&&i<Running_Vehicle.size())
 		{
-			if (Running_Vehicle[loop].getType() == 2)
+			object_erased = 0;
+			switch (Running_Vehicle[i]->getType())
 			{
-				Running_Vehicle.erase(i);
-				cur_CAR_NUM--;
-			}
-			else if (cur_TRUCK_NUM > TRUCK_NUM[level])
+			case 1:
 			{
-				Running_Vehicle.erase(i);
-				cur_TRUCK_NUM--;
-			}
-			//update i
-			loop++;
-		}
-		i = Running_Vehicle.cend();
-		loop = Running_Vehicle.size();
-		{
-			while (cur_TRUCK_NUM > TRUCK_NUM[level])
-			{
-				if (Running_Vehicle[loop].getType() == 1)
+				if (cur_CAR_NUM > CAR_NUM[level])
 				{
-					Running_Vehicle.erase(i);
-					cur_TRUCK_NUM--;
+					Running_Vehicle.erase(Running_Vehicle.cbegin() + i);
+					cur_CAR_NUM--;
+					object_erased = 1;
 				}
-				//update i
-				loop--;
+				break;
 			}
+			case 2:
+			{
+				if (cur_TRUCK_NUM > TRUCK_NUM[level])
+				{
+					Running_Vehicle.erase(Running_Vehicle.cbegin() + i);
+					cur_TRUCK_NUM--;
+					object_erased = 1;
+				}
+				break;
+			}
+			}
+			if (object_erased) i++;
+			
 		}
-
-		
 		
 	}
 	cur_level = level;
@@ -166,32 +261,32 @@ void CONTROL_VEHICLE::update_Vehicle_number(int level)
 	
 }
 
-void CONTROL_VEHICLE::Run(int state,int level) 
+void CONTROL_VEHICLE::Run(int status,int level,int xTruck,int yTruck, int xCar,int yCar) 
 {
 	//state: 1.Running casually
 	//2. Crash
 	//3. Level up
 	
-	update_level(level);
-	switch (state)
+	
+	switch (status)
 	{
 	case 1:
 	{
-		MoveAll();
+		MoveAll(xTruck,yTruck,xCar,yCar);
 		Sleep(3);
 		break; 
 	}
 	case 2:
 	{
-		//Stop moving
+		state(1);
 		//Add noise + blink?
 		break;
 	}
 	default:
 	{
-		update_Vehicle_number(cur_level);
-		MoveAll(); 
+		
+		update_Vehicle_level(level);
+		MoveAll(xTruck, yTruck, xCar, yCar);
 	}
 	}
 }
-*/
