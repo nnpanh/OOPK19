@@ -1,4 +1,5 @@
-﻿#ifndef _CGAME_H_
+﻿#pragma once
+#ifndef _CGAME_H_
 #define _CGAME_H_
 
 #include <iostream>
@@ -41,6 +42,5 @@ public:
 	//void updatePosPeople(char); //Thực hiện điều khiển di chuyển của CPEOPLE
 	//void updatePosVehicle(); //Thực hiện cho CTRUCK & CCAR di chuyển
 	//void updatePosAnimal();//Thực hiện cho CDINAUSOR & CBIRD di chuyển
-}
-
+};
 #endif

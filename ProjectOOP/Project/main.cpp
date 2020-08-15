@@ -13,8 +13,8 @@ int main()
 	//vehicle.join();
 	do
 	{
-		/*
-		system("CLS");
+		
+		/*system("CLS");
 		myVehicle1->Move(4, 4);
 		myVehicle2->Move(18, 4);
 		wcout << endl << endl;
@@ -24,7 +24,7 @@ int main()
 		wcout << endl << endl;
 		system("pause");
 		*/
-		myVehicle.Run(3, 2,5,5,5,10);
+		myVehicle.Run(3,2,5,5,5,10);
 		Sleep(200);
 		myVehicle.EraseAll(5,5,5,10);
 		Sleep(200);

@@ -1,13 +1,2 @@
-﻿  CGAME.cpp
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(20,1): error C2059: syntax error: 'namespace'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(20,1): error C2143: syntax error: missing ';' before '{'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(20,1): error C2447: '{': missing function header (old-style formal list?)
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CVEHICLE.h(70,8): error C2143: syntax error: missing ';' before '<'
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CVEHICLE.h(70,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CVEHICLE.h(70,35): error C2238: unexpected token(s) preceding ';'
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CGAME.cpp(14,11): warning C4309: 'initializing': truncation of constant value
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CGAME.cpp(14,20): warning C4309: 'initializing': truncation of constant value
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CGAME.cpp(14,29): warning C4309: 'initializing': truncation of constant value
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CGAME.cpp(14,38): warning C4309: 'initializing': truncation of constant value
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CGAME.cpp(14,47): warning C4309: 'initializing': truncation of constant value
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CGAME.cpp(14,56): warning C4309: 'initializing': truncation of constant value
+﻿  main.cpp
+  Project.vcxproj -> D:\MINH\OOPK19\ProjectOOP\Debug\Project.exe
