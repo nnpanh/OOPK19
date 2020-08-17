@@ -123,12 +123,12 @@ void clearScreen()
 	SetConsoleCursorPosition(hOut, Position);
 }
 
-void FixConsoleWindow() { //Lock console ratio
+/*void FixConsoleWindow() { //Lock console ratio
 	HWND consoleWindow = GetConsoleWindow();
 	LONG style = GetWindowLong(consoleWindow, GWL_STYLE);
 	style = style & ~(WS_MAXIMIZEBOX) & ~(WS_THICKFRAME);
 	SetWindowLong(consoleWindow, GWL_STYLE, style);
-}
+}*/
 
 CONTROL_VEHICLE::CONTROL_VEHICLE()
 {

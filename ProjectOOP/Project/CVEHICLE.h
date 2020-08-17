@@ -69,7 +69,7 @@ private:
 	int cur_CAR_NUM;
 	int cur_TRUCK_NUM;
 	bool crash;
-	vector<CVEHICLE*> Running_Vehicle;
+	vector <CVEHICLE*> Running_Vehicle;
 public:
 	CONTROL_VEHICLE();
 	~CONTROL_VEHICLE();	
