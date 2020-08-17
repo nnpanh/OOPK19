@@ -33,9 +33,8 @@ ProgramFiles(x86) = C:\Program Files (x86)
 ProgramW6432 = C:\Program Files
 PSModulePath = C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
 PUBLIC = C:\Users\Public
-ServiceHubLogSessionKey = 13A6DE8D
+ServiceHubLogSessionKey = 6BC2A4D7
 SESSIONNAME = Console
-SignInWithHomeTenantOnly = False
 SystemDrive = C:
 SystemRoot = C:\WINDOWS
 TEMP = C:\Users\USER\AppData\Local\Temp
@@ -55,5 +54,7 @@ VSSKUEDITION = Community
 windir = C:\WINDOWS
 
   CVEHICLE.cpp
-D:\OOPK19\ProjectOOP\Project\CVEHICLE.cpp(228,26): warning C4018: '<': signed/unsigned mismatch
+D:\OOPK19\ProjectOOP\Project\CVEHICLE.cpp(224,26): warning C4018: '<': signed/unsigned mismatch
+  main.cpp
+  Generating Code...
   Project.vcxproj -> D:\OOPK19\ProjectOOP\Debug\Project.exe

@@ -11,10 +11,10 @@
 using namespace std;
 
 #define MAXLEVEL 5
-#define MAXWIDTH 100
-#define MAXHEIGHT 100
-#define LINE1 10
-#define LINE2 30
+#define MAXWIDTH 50
+#define MAXHEIGHT 50
+#define LINE1 20
+#define LINE2 100
 #define space 5
 
 class CVEHICLE //abstract
@@ -24,11 +24,13 @@ protected:
 public:
 	CVEHICLE();
 	CVEHICLE(int x,int y);
-	virtual void Move(int X, int Y) = 0;
+	virtual void move(int X, int Y) = 0;
 	virtual void erase() = 0;
 	virtual void draw() = 0;
 	virtual int getWidth() { return 0; };
 	virtual int getType() { return 0; }//1=truck 2= car
+	void Move_border(int xVehicle, int yVehicle, int& count);
+	
 };
 class CTRUCK final :public CVEHICLE
 {
@@ -38,7 +40,7 @@ public:
 	CTRUCK();
 	CTRUCK(int x, int y);
 	~CTRUCK();
-	void Move(int X, int Y) override;
+	void move(int X, int Y) override;
 	void draw();
 	void erase();
 	int getWidth() { return width; };
@@ -52,7 +54,7 @@ public:
 	CCAR();
 	CCAR(int x, int y);
 	~CCAR();
-	void Move(int X, int Y) override;
+	void move(int X, int Y) override;
 	void draw();
 	void erase();
 	int getWidth() { return width; };
@@ -74,7 +76,7 @@ public:
 	bool state(bool isDead); //DEAD OR ALIVE
 	void update_Vehicle_level(int level); //UPDATE LEVEL AND NUMBER OF VEHICLE
 	void MoveAll(int xTruck, int yTruck, int xCar, int yCar);
-	void EraseAll(int xTruck, int yTruck, int xCar, int yCar);
+	void EraseAll();
 	void Run(int state,int level,int xTruck,int yTruck,int xCar,int yCar);
 };
 

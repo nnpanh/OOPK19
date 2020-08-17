@@ -32,7 +32,7 @@ void CCAR::erase()
 	wcout << L"\u2003";
 }
 
-void CCAR::Move(int X, int Y)
+void CCAR::move(int X, int Y)
 {
 	mX = X; mY = Y;
 	draw();
@@ -73,7 +73,7 @@ void CTRUCK::erase()
 }
 
 
-void CTRUCK::Move(int X, int Y)
+void CTRUCK::move(int X, int Y)
 {	
 	
 	mX = X; mY = Y;
@@ -94,6 +94,18 @@ bool CONTROL_VEHICLE::state(bool isDead) {
 	if (isDead) crash = 1;
 	return isDead;
 }
+void CVEHICLE::Move_border(int xVehicle, int yVehicle, int& count)
+{
+	int width = this->getWidth();
+	int new_width = xVehicle + (width + space) * count;
+	if (new_width > MAXWIDTH)
+	{
+		if (new_width - MAXWIDTH > width) count = -1;
+	}
+	else this->move(new_width, yVehicle);
+	count++;
+}
+
 //SUBFUNC
 void GotoXY(int x, int y) {
 	COORD coord;
@@ -138,10 +150,9 @@ CONTROL_VEHICLE::CONTROL_VEHICLE()
 CONTROL_VEHICLE::~CONTROL_VEHICLE(){}
 void CONTROL_VEHICLE::MoveAll(int xTruck, int yTruck, int xCar, int yCar)
 {
-	system("CLS");
+
 	auto count_TRUCK = 0;
 	auto count_CAR = 0;
-	int width = 0;
 	int number_of_Vehicle = Running_Vehicle.size();
 
 	for (int i = 0; i < number_of_Vehicle; i++)
@@ -150,32 +161,23 @@ void CONTROL_VEHICLE::MoveAll(int xTruck, int yTruck, int xCar, int yCar)
 		{
 		case 1: //RUN THIS TRUCK
 		{
-			width = Running_Vehicle[i]->getWidth();
-			int new_width = xTruck + (width+space)*count_TRUCK;
-			if (new_width > MAXWIDTH) cout << "DEAD CMNR";
-			else Running_Vehicle[i]->Move(new_width, yTruck);
-			count_TRUCK++;
+			
+			Running_Vehicle[i]->Move_border(xTruck, yTruck, count_TRUCK);
 			break;
 		}
 		case 2: //RUN THIS CAR
 		{
-			width = Running_Vehicle[i]->getWidth();
-			int new_width = xCar + (width + space) * count_CAR;
-			if (new_width > MAXWIDTH) cout << "DEAD2";
-			else Running_Vehicle[i]->Move(new_width, yCar);
-			count_CAR++;
+			Running_Vehicle[i]->Move_border(xCar, yCar, count_CAR);
 			break;
-
 		}
 		}
 	}
 }
-void CONTROL_VEHICLE::EraseAll(int xTruck, int yTruck, int xCar, int yCar)
+void CONTROL_VEHICLE::EraseAll()
 {
 	system("CLS");
 	auto count_TRUCK = 0;
 	auto count_CAR = 0;
-	int width = 0;
 	int number_of_Vehicle = Running_Vehicle.size();
 
 	for (int i = 0; i < number_of_Vehicle; i++)
@@ -184,19 +186,13 @@ void CONTROL_VEHICLE::EraseAll(int xTruck, int yTruck, int xCar, int yCar)
 		{
 		case 1: //RUN THIS TRUCK
 		{
-			width = Running_Vehicle[i]->getWidth();
-			int new_width = xTruck + (width + space) * count_TRUCK;
-			if (new_width > MAXWIDTH) cout << "HIT THE BORDER";
-			else Running_Vehicle[i]->erase();
+			Running_Vehicle[i]->erase();
 			count_TRUCK++;
 			break;
 		}
 		case 2: //RUN THIS CAR
 		{
-			width = Running_Vehicle[i]->getWidth();
-			int new_width = xCar + (width + space) * count_CAR;
-			if (new_width > MAXWIDTH) cout << "DEAD?";
-			else Running_Vehicle[i]->erase();
+			Running_Vehicle[i]->erase();
 			count_CAR++;
 			break;
 
