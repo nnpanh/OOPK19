@@ -1,7 +1,7 @@
 ﻿#include "CGame.h"
 #include "CVEHICLE.h"
 
-void FixConsoleWindow()//xoa nut maximize va co dinh man hinh
+/*void FixConsoleWindow()//xoa nut maximize va co dinh man hinh
 {
 	HWND consoleWindow = GetConsoleWindow();
 	LONG style = GetWindowLong(consoleWindow, GWL_STYLE);
@@ -13,7 +13,7 @@ void FixConsoleWindow()//xoa nut maximize va co dinh man hinh
 	GetWindowRect(console, &r); //stores the console's current dimensions
 	MoveWindow(console, r.left, r.top, 800, 450, TRUE); // 800 width, 100 height
 
-}
+}*/
 
 void CGAME::drawGame(int x, int y, int width, int height)
 {

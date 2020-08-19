@@ -16,7 +16,7 @@ using namespace std;
 
 HANDLE consolehandle = GetStdHandle(STD_OUTPUT_HANDLE);
 
-void FixConsoleWindow();
+//void FixConsoleWindow();
 
 class CGAME {
 	//CTRUCK* axt;

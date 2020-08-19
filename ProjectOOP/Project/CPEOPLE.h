@@ -2,18 +2,19 @@
 #ifndef _CPEOPLE_
 #define _CPEOPLE_
 
+#include "CVEHICLE.h"
 #include <iostream>
 #include <stdio.h>
 #include <conio.h>
 #include <cstring>
 #include <stdlib.h>
 #include <windows.h>
+#include <io.h>
+#include <fcntl.h>
 using namespace std;
 
 #define consoleWidth	85
 #define consoleHeight	25
-
-//void GotoXY(int x, int y);
 
 class CPEOPLE {
 private:
@@ -29,10 +30,10 @@ public:
 	void Left();
 	void Right();
 	void Down();
-	//bool isImpact(const CVEHICLE*&);
+	bool isImpact(const CVEHICLE*& a);
 	//bool isImpact(const CANIMAL*&);
-	//bool isFinish();
-	//bool isDead();
+	bool isFinish();
+	bool isDead();
 };
 
 

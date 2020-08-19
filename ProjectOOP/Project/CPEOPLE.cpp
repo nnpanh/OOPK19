@@ -49,3 +49,19 @@ void CPEOPLE::Down()
 {
 	mY++;
 }
+
+bool CPEOPLE::isImpact(const CVEHICLE*& a)
+{
+
+}
+
+bool CPEOPLE::isFinish()
+{
+	if (mY < 0)
+		return true;
+	return false;
+}
+bool CPEOPLE::isDead()
+{
+
+}

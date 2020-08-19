@@ -58,7 +58,6 @@ void CTRUCK::draw()
 	wcout << L"\u25cf";
 	GotoXY(mX + 4, mY + 2);
 	wcout << L"\u25cf";
-
 }
 void CTRUCK::erase()
 {
@@ -122,12 +121,18 @@ void clearScreen()
 	SetConsoleCursorPosition(hOut, Position);
 }
 
-/*void FixConsoleWindow() { //Lock console ratio
+void FixConsoleWindow() { //Lock console ratio
 	HWND consoleWindow = GetConsoleWindow();
 	LONG style = GetWindowLong(consoleWindow, GWL_STYLE);
 	style = style & ~(WS_MAXIMIZEBOX) & ~(WS_THICKFRAME);
 	SetWindowLong(consoleWindow, GWL_STYLE, style);
-}*/
+
+	/*HWND console = GetConsoleWindow();
+	RECT r;
+	GetWindowRect(console, &r); //stores the console's current dimensions
+	MoveWindow(console, r.left, r.top, 800, 450, TRUE); // 800 width, 100 height*/
+
+}
 
 CONTROL_VEHICLE::CONTROL_VEHICLE()
 {
