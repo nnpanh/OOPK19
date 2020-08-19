@@ -78,7 +78,6 @@ void CTRUCK::move(int X, int Y)
 	
 	mX = X; mY = Y;
 	draw();
-	
 }
 
 //VEHICLE

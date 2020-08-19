@@ -7,6 +7,12 @@ void FixConsoleWindow()//xoa nut maximize va co dinh man hinh
 	LONG style = GetWindowLong(consoleWindow, GWL_STYLE);
 	style = style & ~(WS_MAXIMIZEBOX) & ~(WS_THICKFRAME);
 	SetWindowLong(consoleWindow, GWL_STYLE, style);
+
+	HWND console = GetConsoleWindow();
+	RECT r;
+	GetWindowRect(console, &r); //stores the console's current dimensions
+	MoveWindow(console, r.left, r.top, 800, 450, TRUE); // 800 width, 100 height
+
 }
 
 void CGAME::drawGame(int x, int y, int width, int height)
