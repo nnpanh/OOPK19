@@ -24,6 +24,8 @@ class CGAME {
 	//CDINAUSOR* akl;
 	//CBIRD* ac;
 	//CPEOPLE cn;
+	int level;
+	int score;
 public:
 	//CGAME(); //Chuẩn bị dữ liệu cho tất cả các đối tượng
 	void drawGame(int x, int y, int width, int height); //Thực hiện vẽ trò chơi ra màn hình sau khi có dữ liệu
@@ -35,7 +37,7 @@ public:
 	//void exitGame(HANDLE); // Thực hiện thoát Thread
 	////void startGame(); // Thực hiện bắt đầu vào trò chơi
 	////void loadGame(istream); // Thực hiện tải lại trò chơi đã lưu
-	////void saveGame(istream); // Thực hiện lưu lại dữ liệu trò chơi
+	void saveGame(ofstream &fout); // Thực hiện lưu lại dữ liệu trò chơi
 
 	void pauseGame(HANDLE t); // Tạm dừng Thread
 	//void resumeGame(HANDLE); //Quay lai Thread

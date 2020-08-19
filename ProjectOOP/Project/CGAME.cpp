@@ -141,3 +141,25 @@ void CGAME::pauseGame(HANDLE t)
 {
 	SuspendThread(t);
 }
+
+void CGAME::saveGame(ofstream& fout)
+{
+	string enter = "Save.txt";
+	cout << "Default file Save: " << enter << endl;
+	cout << "Enter file name to save: " << endl;
+	cin.ignore();
+	getline(cin, enter);
+
+	fout.open(enter.c_str());
+	if (!fout)
+	{
+		cout << "Cant open file to save" << endl;
+		exit(0);
+	}
+	else
+	{
+		fout << level << endl;
+		fout << score << endl;
+	}
+
+}
