@@ -1,12 +1,4 @@
 #include "CPEOPLE.h"
-#include "CVEHICLE.h"
-/*void GotoXY(int x, int y) {
-	COORD coord;
-	coord.X = x;
-	coord.Y = y;
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
-
-}*/
 
 char* CPEOPLE::getCh()
 {
@@ -48,6 +40,7 @@ void CPEOPLE::Right()
 void CPEOPLE::Down()
 {
 	mY++;
+<<<<<<< HEAD
 }
  
 void CPEOPLE::Control()
@@ -92,3 +85,6 @@ void ShowConsoleCursor(bool showFlag)
 	cursorInfo.bVisible = showFlag; // set the cursor visibility
 	SetConsoleCursorInfo(out, &cursorInfo);
 }
+=======
+}
+>>>>>>> fe8ab54096b41430a933eda794a37edbb704a899

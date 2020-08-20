@@ -1,19 +1,21 @@
 #include "CVEHICLE.h"
-#include "CPEOPLE.h"
+#include "Console.h"
+
 int main()
 {
-	_setmode(_fileno(stdout), _O_U16TEXT);
 	FixConsoleWindow();
-	CPEOPLE A;
+	_setmode(_fileno(stdout), _O_U16TEXT);
+	
+
 	CONTROL_VEHICLE myVehicle;
 	//thread vehicle(doSth);
 	//vehicle.join();
 	do
 	{
-		for (int j = 5; j < 200; j += 5)
+		for (int j = BORDER; j < MAXWIDTH; j += space)
 		{
-			myVehicle.Run(3, 2, j, 5, j, 10);
-			Sleep(300);
+			myVehicle.Run(3, 4, j, 5, j, 10);
+			Sleep(400);
 			myVehicle.EraseAll();
 			Sleep(10);
 		}

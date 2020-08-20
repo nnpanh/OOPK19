@@ -1,4 +1,6 @@
 #include "CVEHICLE.h"
+
+
 //CAR
 CCAR::CCAR():CVEHICLE() {
 	length = 3; width = 8;
@@ -8,6 +10,12 @@ CCAR::CCAR(int x, int y): CVEHICLE(x,y) {
 }
 CCAR::~CCAR() {
 	mX = -1; mY = -1;
+}
+int CCAR::getWidth() {
+	return width;
+}
+int CCAR::getType() {
+	return 2;
 }
 void CCAR::draw()
 {
@@ -48,6 +56,12 @@ CTRUCK::CTRUCK(int x, int y) : CVEHICLE(x, y) {
 CTRUCK::~CTRUCK() {
 	mX = -1; mY = -1;
 }
+int CTRUCK::getWidth() {
+	return width;
+}
+int CTRUCK::getType() {
+	return 1;
+}
 void CTRUCK::draw()
 {
 	GotoXY(mX, mY);
@@ -58,6 +72,7 @@ void CTRUCK::draw()
 	wcout << L"\u25cf";
 	GotoXY(mX + 4, mY + 2);
 	wcout << L"\u25cf";
+
 }
 void CTRUCK::erase()
 {
@@ -77,6 +92,7 @@ void CTRUCK::move(int X, int Y)
 	
 	mX = X; mY = Y;
 	draw();
+	
 }
 
 //VEHICLE
@@ -92,47 +108,18 @@ bool CONTROL_VEHICLE::state(bool isDead) {
 	if (isDead) crash = 1;
 	return isDead;
 }
-void CVEHICLE::Move_border(int xVehicle, int yVehicle, int& count)
+void CVEHICLE::Move_border(int& xVehicle, int yVehicle, int& count)
 {
 	int width = this->getWidth();
 	int new_width = xVehicle + (width + space) * count;
-	if (new_width > MAXWIDTH)
+	if (new_width + width > MAXWIDTH)
 	{
-		if (new_width - MAXWIDTH > width) count = -1;
+		if (new_width > MAXWIDTH) count = -2;
 	}
 	else this->move(new_width, yVehicle);
 	count++;
 }
 
-//SUBFUNC
-void GotoXY(int x, int y) {
-	COORD coord;
-	coord.X = x;
-	coord.Y = y;
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
-}
-void clearScreen()
-{
-	HANDLE hOut;
-	COORD Position;
-	hOut = GetStdHandle(STD_OUTPUT_HANDLE);
-	Position.X = 0;
-	Position.Y = 0;
-	SetConsoleCursorPosition(hOut, Position);
-}
-
-void FixConsoleWindow() { //Lock console ratio
-	HWND consoleWindow = GetConsoleWindow();
-	LONG style = GetWindowLong(consoleWindow, GWL_STYLE);
-	style = style & ~(WS_MAXIMIZEBOX) & ~(WS_THICKFRAME);
-	SetWindowLong(consoleWindow, GWL_STYLE, style);
-
-	/*HWND console = GetConsoleWindow();
-	RECT r;
-	GetWindowRect(console, &r); //stores the console's current dimensions
-	MoveWindow(console, r.left, r.top, 800, 450, TRUE); // 800 width, 100 height*/
-
-}
 
 CONTROL_VEHICLE::CONTROL_VEHICLE()
 {
@@ -158,7 +145,7 @@ void CONTROL_VEHICLE::MoveAll(int xTruck, int yTruck, int xCar, int yCar)
 	auto count_TRUCK = 0;
 	auto count_CAR = 0;
 	int number_of_Vehicle = Running_Vehicle.size();
-
+	
 	for (int i = 0; i < number_of_Vehicle; i++)
 	{
 		switch (Running_Vehicle[i]->getType()) 
@@ -167,11 +154,21 @@ void CONTROL_VEHICLE::MoveAll(int xTruck, int yTruck, int xCar, int yCar)
 		{
 			
 			Running_Vehicle[i]->Move_border(xTruck, yTruck, count_TRUCK);
+			if (count_TRUCK == -1)
+			{
+				if (xTruck > BORDER + Running_Vehicle[i]->getWidth()) xTruck = BORDER;
+				count_TRUCK = 0;
+			}
 			break;
 		}
 		case 2: //RUN THIS CAR
 		{
 			Running_Vehicle[i]->Move_border(xCar, yCar, count_CAR);
+			if (count_CAR == -1)
+			{
+				if (xCar > BORDER + Running_Vehicle[i]->getWidth()) xCar = BORDER;
+				count_CAR = 0;
+			}
 			break;
 		}
 		}

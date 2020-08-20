@@ -1,19 +1,7 @@
 ﻿#include "CGame.h"
-#include "CVEHICLE.h"
+#include "Console.h"
 
-/*void FixConsoleWindow()//xoa nut maximize va co dinh man hinh
-{
-	HWND consoleWindow = GetConsoleWindow();
-	LONG style = GetWindowLong(consoleWindow, GWL_STYLE);
-	style = style & ~(WS_MAXIMIZEBOX) & ~(WS_THICKFRAME);
-	SetWindowLong(consoleWindow, GWL_STYLE, style);
 
-	HWND console = GetConsoleWindow();
-	RECT r;
-	GetWindowRect(console, &r); //stores the console's current dimensions
-	MoveWindow(console, r.left, r.top, 800, 450, TRUE); // 800 width, 100 height
-
-}*/
 
 void CGAME::drawGame(int x, int y, int width, int height)
 {
@@ -140,26 +128,4 @@ void CGAME::drawGame(int x, int y, int width, int height)
 void CGAME::pauseGame(HANDLE t)
 {
 	SuspendThread(t);
-}
-
-void CGAME::saveGame(ofstream& fout)
-{
-	string enter = "Save.txt";
-	cout << "Default file Save: " << enter << endl;
-	cout << "Enter file name to save: " << endl;
-	cin.ignore();
-	getline(cin, enter);
-
-	fout.open(enter.c_str());
-	if (!fout)
-	{
-		cout << "Cant open file to save" << endl;
-		exit(0);
-	}
-	else
-	{
-		fout << level << endl;
-		fout << score << endl;
-	}
-
 }

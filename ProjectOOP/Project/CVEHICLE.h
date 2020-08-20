@@ -8,14 +8,17 @@
 #include <Windows.h>
 #include <io.h>
 #include <fcntl.h>
+#include "Console.h"
+
 using namespace std;
 
 #define MAXLEVEL 5
-#define MAXWIDTH 50
+#define MAXWIDTH 100
 #define MAXHEIGHT 50
+#define BORDER 5
 #define LINE1 20
 #define LINE2 100
-#define space 5
+#define space 10
 
 class CVEHICLE //abstract
 {
@@ -27,9 +30,9 @@ public:
 	virtual void move(int X, int Y) = 0;
 	virtual void erase() = 0;
 	virtual void draw() = 0;
-	virtual int getWidth() { return 0; };
-	virtual int getType() { return 0; }//1=truck 2= car
-	void Move_border(int xVehicle, int yVehicle, int& count);
+	virtual int getWidth() = 0;
+	virtual int getType() = 0;//1=truck 2= car
+	void Move_border(int& xVehicle, int yVehicle, int& count);
 	
 };
 class CTRUCK final :public CVEHICLE
@@ -43,8 +46,8 @@ public:
 	void move(int X, int Y) override;
 	void draw();
 	void erase();
-	int getWidth() { return width; };
-	int getType() { return 1; }
+	int getWidth();
+	int getType();
 };
 class CCAR final :public CVEHICLE
 {
@@ -57,8 +60,8 @@ public:
 	void move(int X, int Y) override;
 	void draw();
 	void erase();
-	int getWidth() { return width; };
-	int getType() { return 2; }
+	int getWidth();
+	int getType();
 };
 
 class CONTROL_VEHICLE {
@@ -80,7 +83,5 @@ public:
 	void Run(int state,int level,int xTruck,int yTruck,int xCar,int yCar);
 };
 
-void GotoXY(int x, int y);
-void clearScreen();
-void FixConsoleWindow(); //Lock console ratio
+
 #endif
