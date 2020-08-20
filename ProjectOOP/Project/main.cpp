@@ -12,10 +12,10 @@ int main()
 	//vehicle.join();
 	do
 	{
-		for (int j = 5; j < 200; j += 5)
+		for (int j = BORDER; j < MAXWIDTH; j += space)
 		{
-			myVehicle.Run(3, 2, j, 5, j, 10);
-			Sleep(100);
+			myVehicle.Run(3, 4, j, 5, j, 10);
+			Sleep(400);
 			myVehicle.EraseAll();
 			Sleep(10);
 		}

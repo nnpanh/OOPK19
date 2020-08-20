@@ -8,6 +8,7 @@
 #include <cstring>
 #include <stdlib.h>
 #include <windows.h>
+#include "CVEHICLE.h"
 
 
 using namespace std;

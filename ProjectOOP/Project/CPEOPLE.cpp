@@ -1,5 +1,4 @@
 #include "CPEOPLE.h"
-//#include "Console.h"
 
 char* CPEOPLE::getCh()
 {

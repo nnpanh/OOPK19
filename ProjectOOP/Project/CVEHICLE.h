@@ -8,16 +8,17 @@
 #include <Windows.h>
 #include <io.h>
 #include <fcntl.h>
-
+#include "Console.h"
 
 using namespace std;
 
 #define MAXLEVEL 5
-#define MAXWIDTH 50
+#define MAXWIDTH 100
 #define MAXHEIGHT 50
+#define BORDER 5
 #define LINE1 20
 #define LINE2 100
-#define space 5
+#define space 10
 
 class CVEHICLE //abstract
 {
@@ -31,7 +32,7 @@ public:
 	virtual void draw() = 0;
 	virtual int getWidth() = 0;
 	virtual int getType() = 0;//1=truck 2= car
-	void Move_border(int xVehicle, int yVehicle, int& count);
+	void Move_border(int& xVehicle, int yVehicle, int& count);
 	
 };
 class CTRUCK final :public CVEHICLE

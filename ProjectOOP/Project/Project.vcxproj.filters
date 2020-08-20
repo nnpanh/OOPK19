@@ -13,33 +13,48 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\CGAME">
+      <UniqueIdentifier>{dfac7df2-3c0f-4291-8fa0-b60bfed52b22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CVEHICLE">
+      <UniqueIdentifier>{66517793-97fa-4e25-8613-681ce4a649a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CPEOPLE">
+      <UniqueIdentifier>{65b28b5d-10fa-4d4b-a78c-df88717d25c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CONSOLE">
+      <UniqueIdentifier>{e8f67549-243f-43ab-acfd-5fc71cfbd4e0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CVEHICLE.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CGAME.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\CGAME</Filter>
+    </ClCompile>
+    <ClCompile Include="CVEHICLE.cpp">
+      <Filter>Source Files\CVEHICLE</Filter>
     </ClCompile>
     <ClCompile Include="CPEOPLE.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\CPEOPLE</Filter>
+    </ClCompile>
+    <ClCompile Include="Console.cpp">
+      <Filter>Source Files\CONSOLE</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CVEHICLE.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CGame.h">
-      <Filter>Header Files</Filter>
+      <Filter>Source Files\CGAME</Filter>
+    </ClInclude>
+    <ClInclude Include="CVEHICLE.h">
+      <Filter>Source Files\CVEHICLE</Filter>
     </ClInclude>
     <ClInclude Include="CPEOPLE.h">
-      <Filter>Header Files</Filter>
+      <Filter>Source Files\CPEOPLE</Filter>
     </ClInclude>
     <ClInclude Include="Console.h">
-      <Filter>Header Files</Filter>
+      <Filter>Source Files\CONSOLE</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

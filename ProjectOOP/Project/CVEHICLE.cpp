@@ -1,5 +1,5 @@
 #include "CVEHICLE.h"
-#include "Console.h"
+
 
 //CAR
 CCAR::CCAR():CVEHICLE() {
@@ -108,15 +108,15 @@ bool CONTROL_VEHICLE::state(bool isDead) {
 	if (isDead) crash = 1;
 	return isDead;
 }
-void CVEHICLE::Move_border(int xVehicle, int yVehicle, int& count)
+void CVEHICLE::Move_border(int& xVehicle, int yVehicle, int& count)
 {
 	int width = this->getWidth();
 	int new_width = xVehicle + (width + space) * count;
-	if (new_width > MAXWIDTH)
+	if (new_width + width > MAXWIDTH)
 	{
-		if (new_width - MAXWIDTH > width) count = -1;
-		else this->move(new_width, yVehicle);
+		if (new_width > MAXWIDTH) count = -2;
 	}
+	else this->move(new_width, yVehicle);
 	count++;
 }
 
@@ -145,7 +145,7 @@ void CONTROL_VEHICLE::MoveAll(int xTruck, int yTruck, int xCar, int yCar)
 	auto count_TRUCK = 0;
 	auto count_CAR = 0;
 	int number_of_Vehicle = Running_Vehicle.size();
-
+	
 	for (int i = 0; i < number_of_Vehicle; i++)
 	{
 		switch (Running_Vehicle[i]->getType()) 
@@ -154,11 +154,21 @@ void CONTROL_VEHICLE::MoveAll(int xTruck, int yTruck, int xCar, int yCar)
 		{
 			
 			Running_Vehicle[i]->Move_border(xTruck, yTruck, count_TRUCK);
+			if (count_TRUCK == -1)
+			{
+				if (xTruck > BORDER + Running_Vehicle[i]->getWidth()) xTruck = BORDER;
+				count_TRUCK = 0;
+			}
 			break;
 		}
 		case 2: //RUN THIS CAR
 		{
 			Running_Vehicle[i]->Move_border(xCar, yCar, count_CAR);
+			if (count_CAR == -1)
+			{
+				if (xCar > BORDER + Running_Vehicle[i]->getWidth()) xCar = BORDER;
+				count_CAR = 0;
+			}
 			break;
 		}
 		}
