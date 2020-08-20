@@ -1,4 +1,6 @@
 #include "CVEHICLE.h"
+#include "Console.h"
+
 //CAR
 CCAR::CCAR():CVEHICLE() {
 	length = 3; width = 8;
@@ -8,6 +10,12 @@ CCAR::CCAR(int x, int y): CVEHICLE(x,y) {
 }
 CCAR::~CCAR() {
 	mX = -1; mY = -1;
+}
+int CCAR::getWidth() {
+	return width;
+}
+int CCAR::getType() {
+	return 2;
 }
 void CCAR::draw()
 {
@@ -47,6 +55,12 @@ CTRUCK::CTRUCK(int x, int y) : CVEHICLE(x, y) {
 }
 CTRUCK::~CTRUCK() {
 	mX = -1; mY = -1;
+}
+int CTRUCK::getWidth() {
+	return width;
+}
+int CTRUCK::getType() {
+	return 1;
 }
 void CTRUCK::draw()
 {
@@ -101,34 +115,11 @@ void CVEHICLE::Move_border(int xVehicle, int yVehicle, int& count)
 	if (new_width > MAXWIDTH)
 	{
 		if (new_width - MAXWIDTH > width) count = -1;
+		else this->move(new_width, yVehicle);
 	}
-	else this->move(new_width, yVehicle);
 	count++;
 }
 
-//SUBFUNC
-void GotoXY(int x, int y) {
-	COORD coord;
-	coord.X = x;
-	coord.Y = y;
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
-}
-void clearScreen()
-{
-	HANDLE hOut;
-	COORD Position;
-	hOut = GetStdHandle(STD_OUTPUT_HANDLE);
-	Position.X = 0;
-	Position.Y = 0;
-	SetConsoleCursorPosition(hOut, Position);
-}
-
-/*void FixConsoleWindow() { //Lock console ratio
-	HWND consoleWindow = GetConsoleWindow();
-	LONG style = GetWindowLong(consoleWindow, GWL_STYLE);
-	style = style & ~(WS_MAXIMIZEBOX) & ~(WS_THICKFRAME);
-	SetWindowLong(consoleWindow, GWL_STYLE, style);
-}*/
 
 CONTROL_VEHICLE::CONTROL_VEHICLE()
 {

@@ -1,13 +1,7 @@
 ﻿#include "CGame.h"
-#include "CVEHICLE.h"
+#include "Console.h"
 
-void FixConsoleWindow()//xoa nut maximize va co dinh man hinh
-{
-	HWND consoleWindow = GetConsoleWindow();
-	LONG style = GetWindowLong(consoleWindow, GWL_STYLE);
-	style = style & ~(WS_MAXIMIZEBOX) & ~(WS_THICKFRAME);
-	SetWindowLong(consoleWindow, GWL_STYLE, style);
-}
+
 
 void CGAME::drawGame(int x, int y, int width, int height)
 {

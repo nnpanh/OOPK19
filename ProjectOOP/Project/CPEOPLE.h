@@ -8,12 +8,13 @@
 #include <cstring>
 #include <stdlib.h>
 #include <windows.h>
+
+
 using namespace std;
 
 #define consoleWidth	85
 #define consoleHeight	25
 
-void GotoXY(int x, int y);
 
 class CPEOPLE {
 private:

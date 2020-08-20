@@ -38,6 +38,9 @@
     <ClInclude Include="CPEOPLE.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Console.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="VEHICLE.txt">

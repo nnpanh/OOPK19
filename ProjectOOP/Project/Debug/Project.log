@@ -33,7 +33,7 @@ ProgramFiles(x86) = C:\Program Files (x86)
 ProgramW6432 = C:\Program Files
 PSModulePath = C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
 PUBLIC = C:\Users\Public
-ServiceHubLogSessionKey = 6BC2A4D7
+ServiceHubLogSessionKey = 05164DCD
 SESSIONNAME = Console
 SystemDrive = C:
 SystemRoot = C:\WINDOWS
@@ -53,8 +53,13 @@ VSLANG = 1033
 VSSKUEDITION = Community
 windir = C:\WINDOWS
 
+  CPEOPLE.cpp
   CVEHICLE.cpp
-D:\OOPK19\ProjectOOP\Project\CVEHICLE.cpp(224,26): warning C4018: '<': signed/unsigned mismatch
+D:\OOPK19\ProjectOOP\Project\CVEHICLE.cpp(215,26): warning C4018: '<': signed/unsigned mismatch
   main.cpp
   Generating Code...
-  Project.vcxproj -> D:\OOPK19\ProjectOOP\Debug\Project.exe
+CVEHICLE.obj : error LNK2005: "void __cdecl FixConsoleWindow(void)" (?FixConsoleWindow@@YAXXZ) already defined in CGAME.obj
+CVEHICLE.obj : error LNK2005: "void __cdecl GotoXY(int,int)" (?GotoXY@@YAXHH@Z) already defined in CGAME.obj
+main.obj : error LNK2005: "void __cdecl FixConsoleWindow(void)" (?FixConsoleWindow@@YAXXZ) already defined in CGAME.obj
+main.obj : error LNK2005: "void __cdecl GotoXY(int,int)" (?GotoXY@@YAXHH@Z) already defined in CGAME.obj
+D:\OOPK19\ProjectOOP\Debug\Project.exe : fatal error LNK1169: one or more multiply defined symbols found
