@@ -9,8 +9,6 @@
 #include <stdlib.h>
 #include <windows.h>
 #include "CVEHICLE.h"
-
-
 using namespace std;
 
 #define consoleWidth	85

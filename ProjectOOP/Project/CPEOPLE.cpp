@@ -45,6 +45,8 @@ void CPEOPLE::Down()
  
 void CPEOPLE::Control()
 {
+	ShowConsoleCursor(false);
+	GotoXY(getX(),getY());
 	display();
 	if (_kbhit())
 	{
