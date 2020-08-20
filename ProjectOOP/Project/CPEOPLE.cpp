@@ -4,6 +4,7 @@ char* CPEOPLE::getCh()
 {
 	return s;
 }
+
 CPEOPLE::CPEOPLE()
 {
 	mX = (consoleWidth - strlen(s)) / 2;
@@ -40,7 +41,6 @@ void CPEOPLE::Right()
 void CPEOPLE::Down()
 {
 	mY++;
-<<<<<<< HEAD
 }
  
 void CPEOPLE::Control()
@@ -60,21 +60,11 @@ void CPEOPLE::Control()
 	}
 
 }
-
-bool CPEOPLE::isImpact(const CVEHICLE*& a)
-{
-
-}
-
 bool CPEOPLE::isFinish()
 {
 	if (mY < 0)
 		return true;
 	return false;
-}
-bool CPEOPLE::isDead()
-{
-
 }
 
 void ShowConsoleCursor(bool showFlag)
@@ -85,6 +75,3 @@ void ShowConsoleCursor(bool showFlag)
 	cursorInfo.bVisible = showFlag; // set the cursor visibility
 	SetConsoleCursorInfo(out, &cursorInfo);
 }
-=======
-}
->>>>>>> fe8ab54096b41430a933eda794a37edbb704a899

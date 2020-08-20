@@ -16,10 +16,7 @@ using namespace std;
 #define consoleWidth	85
 #define consoleHeight	25
 
-<<<<<<< HEAD
 void ShowConsoleCursor(bool showFlag);
-=======
->>>>>>> fe8ab54096b41430a933eda794a37edbb704a899
 
 class CPEOPLE {
 private:
@@ -35,15 +32,12 @@ public:
 	void Left();
 	void Right();
 	void Down();
-<<<<<<< HEAD
 	void Control();
 	bool isImpact(const CVEHICLE*& a);
-=======
 	//bool isImpact(const CVEHICLE*&);
->>>>>>> fe8ab54096b41430a933eda794a37edbb704a899
 	//bool isImpact(const CANIMAL*&);
-	//bool isFinish();
-	//bool isDead();
+	bool isFinish();
+	bool isDead();
 };
 
 
