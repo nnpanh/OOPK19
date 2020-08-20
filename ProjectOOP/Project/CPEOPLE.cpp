@@ -49,6 +49,24 @@ void CPEOPLE::Down()
 {
 	mY++;
 }
+ 
+void CPEOPLE::Control()
+{
+	display();
+	if (_kbhit())
+	{
+		char key = _getch();
+		if (key == 'A' || key == 'a' && mX > 0)
+			Left();
+		else if (key == 'D' || key == 'd' && mX < consoleWidth)
+			Right();
+		else if (key == 'W' || key == 'w' && mY > 0)
+			Up();
+		else if (key == 'S' || key == 's' && mY < consoleHeight)
+			Down();
+	}
+
+}
 
 bool CPEOPLE::isImpact(const CVEHICLE*& a)
 {
@@ -64,4 +82,13 @@ bool CPEOPLE::isFinish()
 bool CPEOPLE::isDead()
 {
 
+}
+
+void ShowConsoleCursor(bool showFlag)
+{
+	HANDLE out = GetStdHandle(STD_OUTPUT_HANDLE);
+	CONSOLE_CURSOR_INFO     cursorInfo;
+	GetConsoleCursorInfo(out, &cursorInfo);
+	cursorInfo.bVisible = showFlag; // set the cursor visibility
+	SetConsoleCursorInfo(out, &cursorInfo);
 }
