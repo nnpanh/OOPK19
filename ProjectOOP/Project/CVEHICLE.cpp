@@ -44,7 +44,6 @@ void CCAR::move(int X, int Y)
 {
 	mX = X; mY = Y;
 	draw();
-	
 }
 //TRUCK
 CTRUCK::CTRUCK():CVEHICLE() {
@@ -176,7 +175,6 @@ void CONTROL_VEHICLE::MoveAll(int xTruck, int yTruck, int xCar, int yCar)
 }
 void CONTROL_VEHICLE::EraseAll()
 {
-	system("CLS");
 	auto count_TRUCK = 0;
 	auto count_CAR = 0;
 	int number_of_Vehicle = Running_Vehicle.size();
@@ -286,4 +284,19 @@ void CONTROL_VEHICLE::Run(int status,int level,int xTruck,int yTruck, int xCar,i
 		MoveAll(xTruck, yTruck, xCar, yCar);
 	}
 	}
+}
+
+void doVehicle()
+{
+	CONTROL_VEHICLE myVehicle;
+	do
+	{
+		for (int j = BORDER; j < MAXWIDTH; j += space)
+		{
+			myVehicle.Run(3, 4, j, 5, j, 10);
+			Sleep(400);
+			myVehicle.EraseAll();
+			Sleep(10);
+		}
+	} while (GetAsyncKeyState(VK_ESCAPE) == 0);
 }

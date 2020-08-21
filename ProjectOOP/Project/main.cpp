@@ -9,10 +9,10 @@ int main()
 	FixConsoleWindow();
 	//_setmode(_fileno(stdout), _O_U16TEXT);
 	
-	/*CONTROL_VEHICLE myVehicle;
+	CONTROL_VEHICLE myVehicle;
 	//thread vehicle(doSth);
 	//vehicle.join();
-	do
+	/*do
 	{
 		for (int j = BORDER; j < MAXWIDTH; j += space)
 		{
@@ -23,12 +23,11 @@ int main()
 		}
 	} while (GetAsyncKeyState(VK_ESCAPE) == 0);*/
 
-	thread people(doPeople);
 	thread vehicle(doVehicle);
-
-
+	thread people(doPeople);
 	vehicle.join();
 	people.join();
+
 	return 0;
 
 }

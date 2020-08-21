@@ -29,12 +29,13 @@ public:
 	void Right();
 	void Down();
 	void Control();
-	bool isImpact(const CVEHICLE*& a);
+	bool isImpact(CVEHICLE*& a);
 	//bool isImpact(const CVEHICLE*&);
 	//bool isImpact(const CANIMAL*&);
 	bool isFinish();
 	bool isDead();
 };
+void doPeople();
 
 
 #endif

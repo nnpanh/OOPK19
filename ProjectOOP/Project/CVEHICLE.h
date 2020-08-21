@@ -9,7 +9,6 @@
 #include <io.h>
 #include <fcntl.h>
 #include "Console.h"
-
 using namespace std;
 
 #define MAXLEVEL 5
@@ -31,6 +30,14 @@ public:
 	virtual void erase() = 0;
 	virtual void draw() = 0;
 	virtual int getWidth() = 0;
+	virtual int getx()
+	{
+		return mX;
+	}
+	virtual int gety()
+	{
+		return mY;
+	}
 	virtual int getType() = 0;//1=truck 2= car
 	void Move_border(int& xVehicle, int yVehicle, int& count);
 	

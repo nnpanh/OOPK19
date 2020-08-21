@@ -9,7 +9,7 @@ CPEOPLE::CPEOPLE()
 {
 	//mX = (consoleWidth - strlen(s)) / 2;
 	mX = consoleWidth/ 2;
-	mY = 0;
+	mY = consoleHeight;
 }
 
 void CPEOPLE::display()
@@ -29,6 +29,8 @@ void CPEOPLE::Up()
 	GotoXY(mX, mY);
 	cout << "  ";
 	mY--;
+	GotoXY(mX, mY);
+	display();
 }
 
 void CPEOPLE::Left()
@@ -36,6 +38,8 @@ void CPEOPLE::Left()
 	GotoXY(mX, mY);
 	cout << "  ";
 	mX--;
+	GotoXY(mX, mY);
+	display();
 }
 
 void CPEOPLE::Right()
@@ -43,6 +47,8 @@ void CPEOPLE::Right()
 	GotoXY(mX, mY);
 	cout << "  ";
 	mX++;
+	GotoXY(mX, mY);
+	display();
 }
 
 void CPEOPLE::Down()
@@ -50,13 +56,15 @@ void CPEOPLE::Down()
 	GotoXY(mX, mY);
 	cout << "  ";
 	mY++;
+	GotoXY(mX, mY);
+	display();
 }
  
 void CPEOPLE::Control()
 {
 	ShowConsoleCursor(false);
 	GotoXY(mX,mY);
-	display();
+	//display();
 	if (_kbhit())
 	{
 		char key = _getch();
@@ -69,11 +77,17 @@ void CPEOPLE::Control()
 		else if (key == 'S' || key == 's' && mY < consoleHeight)
 			Down();
 	}
-
 }
 bool CPEOPLE::isFinish()
 {
-	if (mY < 0)
+	if (mY == 0)
+		return true;
+	return false;
+}
+
+bool CPEOPLE::isImpact(CVEHICLE*& a)
+{
+	if (a->getx() - mX == 0 || a->gety() - mY == 0)
 		return true;
 	return false;
 }
@@ -93,5 +107,12 @@ void doPeople()
 	while (1)
 	{
 		x.Control();
+		if (x.isFinish())
+		{
+			GotoXY(x.getX(), x.getY());
+			cout << " ";
+			cout << "WIN";
+			return;
+		}
 	}
 }
