@@ -1,2 +1,3 @@
-﻿  main.cpp
+﻿  CVEHICLE.cpp
+D:\MINH\OOPK19\ProjectOOP\Project\CVEHICLE.cpp(225,26): warning C4018: '<': signed/unsigned mismatch
   Project.vcxproj -> D:\MINH\OOPK19\ProjectOOP\Debug\Project.exe

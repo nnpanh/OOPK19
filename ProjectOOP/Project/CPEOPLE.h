@@ -13,7 +13,7 @@ using namespace std;
 #define consoleHeight	25
 
 void ShowConsoleCursor(bool showFlag);
-
+void doPeople();
 class CPEOPLE {
 private:
 	int mX, mY;

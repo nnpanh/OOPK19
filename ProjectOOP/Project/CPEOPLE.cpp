@@ -7,7 +7,8 @@ char* CPEOPLE::getCh()
 
 CPEOPLE::CPEOPLE()
 {
-	mX = (consoleWidth - strlen(s)) / 2;
+	//mX = (consoleWidth - strlen(s)) / 2;
+	mX = consoleWidth/ 2;
 	mY = 0;
 }
 
@@ -25,28 +26,36 @@ int CPEOPLE::getY()
 }
 void CPEOPLE::Up()
 {
+	GotoXY(mX, mY);
+	cout << "  ";
 	mY--;
 }
 
 void CPEOPLE::Left()
 {
+	GotoXY(mX, mY);
+	cout << "  ";
 	mX--;
 }
 
 void CPEOPLE::Right()
 {
+	GotoXY(mX, mY);
+	cout << "  ";
 	mX++;
 }
 
 void CPEOPLE::Down()
 {
+	GotoXY(mX, mY);
+	cout << "  ";
 	mY++;
 }
  
 void CPEOPLE::Control()
 {
 	ShowConsoleCursor(false);
-	GotoXY(getX(),getY());
+	GotoXY(mX,mY);
 	display();
 	if (_kbhit())
 	{
@@ -76,4 +85,13 @@ void ShowConsoleCursor(bool showFlag)
 	GetConsoleCursorInfo(out, &cursorInfo);
 	cursorInfo.bVisible = showFlag; // set the cursor visibility
 	SetConsoleCursorInfo(out, &cursorInfo);
+}
+
+void doPeople()
+{
+	CPEOPLE x;
+	while (1)
+	{
+		x.Control();
+	}
 }

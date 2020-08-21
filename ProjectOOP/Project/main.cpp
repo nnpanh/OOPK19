@@ -2,6 +2,8 @@
 #include "Console.h"
 #include "CPEOPLE.h"
 
+
+
 int main()
 {
 	FixConsoleWindow();
@@ -21,4 +23,5 @@ int main()
 		}
 	} while (GetAsyncKeyState(VK_ESCAPE) == 0);
 	return 0;
+
 }
