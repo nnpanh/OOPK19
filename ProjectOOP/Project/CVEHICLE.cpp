@@ -20,28 +20,24 @@ int CCAR::getType() {
 void CCAR::draw()
 {
 	GotoXY(mX, mY);
-	wcout << L"\u2588\u2588\u2588\u2588";
-	//cout << (char)219 << (char)219 << (char)219 << (char)219;
+	cout << (char)219<<(char)219 << (char)219 << (char)219;
 	GotoXY(mX - 2, mY + 1);
-	wcout << L"\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588";
-	//cout << (char)219 << (char)219 << (char)219 << (char)219 << (char)219 << (char)219 << (char)219 << (char)219;
+	cout << (char)219 << (char)219 << (char)219 << (char)219 << (char)219 << (char)219 << (char)219 << (char)219;
 	GotoXY(mX - 1, mY + 2);
-	wcout << L"\u25cf";
+	cout << (char)79;
 	GotoXY(mX + 4, mY + 2);
-	wcout << L"\u25cf";
+	cout << (char)79;
 }
 void CCAR::erase()
 {
 	GotoXY(mX, mY);
-	wcout << L"\u2003\u2003\u2003\u2003";
-	//cout << (char)219 << (char)219 << (char)219 << (char)219;
+	cout << "    ";
 	GotoXY(mX - 2, mY + 1);
-	//cout << (char)219 << (char)219 << (char)219 << (char)219 << (char)219 << (char)219 << (char)219 << (char)219;
-	wcout << L"\u2003\u2003\u2003\u2003\u2003\u2003\u2003\u2003";
+	cout << "        ";
 	GotoXY(mX - 1, mY + 2);
-	wcout << L"\u2003";
+	cout << " ";
 	GotoXY(mX + 4, mY + 2);
-	wcout << L"\u2003";
+	cout << " ";
 }
 
 void CCAR::move(int X, int Y)
@@ -69,29 +65,25 @@ int CTRUCK::getType() {
 void CTRUCK::draw()
 {
 	GotoXY(mX, mY);
-	wcout << L"\u2588\u2588\u2588\u2588\u2588";
-	//cout << (char)219 << (char)219 << (char)219 << (char)219 << (char)219;
+	cout << (char)219 << (char)219 << (char)219 << (char)219<<(char)219;
 	GotoXY(mX, mY + 1);
-	wcout << L"\u2588\u2588\u2588\u2588\u2588\u2588\u2588";
-	//cout << (char)219 << (char)219 << (char)219 << (char)219 << (char)219 << (char)219 << (char)219;
+	cout<<  (char)219 << (char)219 << (char)219 << (char)219 << (char)219 << (char)219 << (char)219;
 	GotoXY(mX + 1, mY + 2);
-	wcout << L"\u25cf";
+	cout << (char)79;
 	GotoXY(mX + 4, mY + 2);
-	wcout << L"\u25cf";
+	cout << (char)79;
 
 }
 void CTRUCK::erase()
 {
 	GotoXY(mX, mY);
-	wcout << L"\u2003\u2003\u2003\u2003\u2003";
-	//cout << "     ";
+	cout << "     ";
 	GotoXY(mX, mY + 1);
-	wcout << L"\u2003\u2003\u2003\u2003\u2003\u2003\u2003";
-	//cout << "       ";
+	cout << "       ";
 	GotoXY(mX + 1, mY + 2);
-	wcout << L"\u2003";
+	cout << " ";
 	GotoXY(mX + 4, mY + 2);
-	wcout << L"\u2003";
+	cout << " ";
 }
 
 
@@ -294,20 +286,4 @@ void CONTROL_VEHICLE::Run(int status,int level,int xTruck,int yTruck, int xCar,i
 		MoveAll(xTruck, yTruck, xCar, yCar);
 	}
 	}
-}
-
-
-void doVehicle()
-{
-	CONTROL_VEHICLE myVehicle;
-	do
-	{
-		for (int j = BORDER; j < MAXWIDTH; j += space)
-		{
-			myVehicle.Run(3, 4, j, 5, j, 10);
-			Sleep(400);
-			myVehicle.EraseAll();
-			Sleep(10);
-		}
-	} while (GetAsyncKeyState(VK_ESCAPE) == 0);
 }
