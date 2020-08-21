@@ -13,7 +13,7 @@ CPEOPLE::CPEOPLE()
 
 void CPEOPLE::display()
 {
-	cout << s;
+	cout << getCh();
 }
 int CPEOPLE::getX()
 {

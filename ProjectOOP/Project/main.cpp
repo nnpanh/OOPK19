@@ -1,5 +1,5 @@
 #include "CVEHICLE.h"
-//#include "Console.h"
+#include "Console.h"
 #include "CPEOPLE.h"
 
 int main()
@@ -7,8 +7,7 @@ int main()
 	FixConsoleWindow();
 	_setmode(_fileno(stdout), _O_U16TEXT);
 	
-
-	//CONTROL_VEHICLE myVehicle;
+	CONTROL_VEHICLE myVehicle;
 	//thread vehicle(doSth);
 	//vehicle.join();
 	do

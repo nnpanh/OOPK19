@@ -3,10 +3,8 @@
 #define _CPEOPLE_
 
 #include <iostream>
-#include <stdio.h>
 #include <conio.h>
 #include <cstring>
-#include <stdlib.h>
 #include <windows.h>
 #include "CVEHICLE.h"
 using namespace std;
@@ -19,7 +17,7 @@ void ShowConsoleCursor(bool showFlag);
 class CPEOPLE {
 private:
 	int mX, mY;
-	char* s = _strdup("Y");
+	char* s = _strdup("YY");
 public:
 	char* getCh();
 	int getX();
