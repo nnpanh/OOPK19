@@ -84,11 +84,17 @@ bool CPEOPLE::isFinish()
 		return true;
 	return false;
 }
-
+bool CPEOPLE::isDead()
+{
+	if (mState == true)
+		return true;
+	return false;
+}
 bool CPEOPLE::isImpact(CVEHICLE*& a)
 {
 	if (a->getx() - mX == 0 || a->gety() - mY == 0)
 		return true;
+	mState = true;
 	return false;
 }
 

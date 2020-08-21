@@ -38,7 +38,7 @@ public:
 	//vector <CDinausor>& getDinausor();
 	//vector <CBird>& getBird();
 
-	void resetGame(); // havent done 
+	//void resetGame(); // havent done 
 
 	void exitGame(HANDLE); // Thực hiện thoát Thread
 	void startGame(); // Thực hiện bắt đầu vào trò chơi

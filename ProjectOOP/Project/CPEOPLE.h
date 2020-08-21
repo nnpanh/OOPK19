@@ -18,6 +18,7 @@ class CPEOPLE {
 private:
 	int mX, mY;
 	char* s = _strdup("Y");
+	bool mState = false;
 public:
 	char* getCh();
 	int getX();
@@ -30,7 +31,6 @@ public:
 	void Down();
 	void Control();
 	bool isImpact(CVEHICLE*& a);
-	//bool isImpact(const CVEHICLE*&);
 	//bool isImpact(const CANIMAL*&);
 	bool isFinish();
 	bool isDead();
