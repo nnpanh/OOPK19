@@ -83,4 +83,5 @@ public:
 	void Run(int state,int level,int xTruck,int yTruck,int xCar,int yCar);
 };
 
+void doVehicle();
 #endif

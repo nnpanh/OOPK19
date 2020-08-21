@@ -17,7 +17,7 @@ void doPeople();
 class CPEOPLE {
 private:
 	int mX, mY;
-	char* s = _strdup("YY");
+	char* s = _strdup("Y");
 public:
 	char* getCh();
 	int getX();
