@@ -1,33 +1,78 @@
 #include "CVEHICLE.h"
 #include "Console.h"
 #include "CPEOPLE.h"
+#include "CGame.h"
 
+char MOVING;
+CGAME* cg;
 
-
+void SubThread() {
+	int timeTraffic = 0;
+	while (1) {
+		if (!cg->getPeople().isDead()) {
+			cg->drawGame(219);
+			GotoXY(WIDTH_CONSOLE + 8, HEIGHT_CONSOLE / 2);
+			cg->updatePosPeople(MOVING);
+			MOVING = ' ';
+			/*if (cg->getPeople().isImpact(cg->getTruck()) ||
+				cg->getPeople().isImpact(cg->getCar()) ||
+				cg->getPeople().isImpact(cg->getBird()) ||
+				cg->getPeople().isImpact(cg->getDinausor())) {
+				GotoXY(0, HEIGHT + 1);
+				cout << "Dead, press Y to start a new game!";
+				cg->getPeople().setState(false);
+			}
+			else if (cg->getPeople().isFinish()) {
+				cg->drawGame(255);
+				cg->getPeople().setLevel(2);
+				cg->resize(2);
+				cg->resetGame();
+			}
+			else if (cg->getPeople().isLevelUp()) {
+				cg->drawGame(255);
+				cg->getPeople().setLevel(g->getPeople().getLevel() + 1);
+				cg->resize(g->getPeople().getLevel());
+				cg->resetGame();
+			}*/
+			//Sleep(80);
+		}
+	}
+}
 int main()
 {
+	cg = new CGAME;
+	int temp;
 	FixConsoleWindow();
-	//_setmode(_fileno(stdout), _O_U16TEXT);
-	
-	CONTROL_VEHICLE myVehicle;
-	//thread vehicle(doSth);
-	//vehicle.join();
-	/*do
+	cg->startGame();
+	thread t1(SubThread);
+	while (1)
 	{
-		for (int j = BORDER; j < MAXWIDTH; j += space)
+		temp = toupper(_getch());
+		if (!cg->getPeople().isDead())
 		{
-			myVehicle.Run(3, 4, j, 5, j, 10);
-			Sleep(400);
-			myVehicle.EraseAll();
-			Sleep(10);
+			if (temp == 27) {
+				cg->exitGame(t1.native_handle());
+				return 0;
+			}
+			else if (temp == 'P') {
+				cg->pauseGame(t1.native_handle());
+
+			}
+			else {
+				cg->resumeGame((HANDLE)t1.native_handle());
+				MOVING = temp;
+			}
 		}
-	} while (GetAsyncKeyState(VK_ESCAPE) == 0);*/
-
-	thread vehicle(doVehicle);
-	thread people(doPeople);
-	vehicle.join();
-	people.join();
-
+		else
+		{
+			if (temp == 'Y') cg->startGame();
+			else 
+			{
+				cg->exitGame(t1.native_handle());
+				return 0;
+			}
+		}
+	}
+	t1.join();
 	return 0;
-
 }

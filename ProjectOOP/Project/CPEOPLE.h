@@ -6,36 +6,38 @@
 #include <conio.h>
 #include <cstring>
 #include <windows.h>
+#include <vector>
 #include "CVEHICLE.h"
+#include "Console.h"
 using namespace std;
 
-#define consoleWidth	85
-#define consoleHeight	25
 
-void ShowConsoleCursor(bool showFlag);
 void doPeople();
 class CPEOPLE {
 private:
 	int mX, mY;
-	char* s = _strdup("Y");
-	bool mState = false;
+	bool mState;
 public:
-	char* getCh();
 	int getX();
 	int getY();
-	void display();
+	void draw();
 	CPEOPLE();
 	void Up();
 	void Left();
 	void Right();
 	void Down();
-	void Control();
-	bool isImpact(CVEHICLE*& a);
-	//bool isImpact(const CANIMAL*&);
+	//template<class T>
+	/*bool isImpact(vector <T> ob) {
+		for (int i = 0; i < ob.size(); i++) {
+			if (ob[i].isImpact(m_p)) {
+				return true;
+			}
+		}
+		return false;
+	}*/
 	bool isFinish();
 	bool isDead();
 };
-void doPeople();
 
 
 #endif

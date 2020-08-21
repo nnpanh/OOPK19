@@ -1,20 +1,14 @@
 #include "CPEOPLE.h"
-
-char* CPEOPLE::getCh()
-{
-	return s;
-}
-
+#include "Console.h"
 CPEOPLE::CPEOPLE()
 {
-	//mX = (consoleWidth - strlen(s)) / 2;
-	mX = consoleWidth/ 2;
-	mY = consoleHeight;
+	mX = WIDTH_CONSOLE/2;
+	mY = HEIGHT_CONSOLE-1;
 }
 
-void CPEOPLE::display()
+void CPEOPLE::draw()
 {
-	cout << getCh();
+	cout << "Y";
 }
 int CPEOPLE::getX()
 {
@@ -26,58 +20,47 @@ int CPEOPLE::getY()
 }
 void CPEOPLE::Up()
 {
-	GotoXY(mX, mY);
-	cout << "  ";
-	mY--;
-	GotoXY(mX, mY);
-	display();
+	if(mY > 1)
+	{
+		GotoXY(mX, mY);
+		cout << " ";
+		mY--;
+		GotoXY(mX, mY);
+	}
 }
 
 void CPEOPLE::Left()
 {
-	GotoXY(mX, mY);
-	cout << "  ";
-	mX--;
-	GotoXY(mX, mY);
-	display();
+	if (mX > 2)
+	{
+		GotoXY(mX, mY);
+		cout << " ";
+		mX--;
+		GotoXY(mX, mY);
+	}
 }
 
 void CPEOPLE::Right()
 {
-	GotoXY(mX, mY);
-	cout << "  ";
-	mX++;
-	GotoXY(mX, mY);
-	display();
-}
-
-void CPEOPLE::Down()
-{
-	GotoXY(mX, mY);
-	cout << "  ";
-	mY++;
-	GotoXY(mX, mY);
-	display();
-}
- 
-void CPEOPLE::Control()
-{
-	ShowConsoleCursor(false);
-	GotoXY(mX,mY);
-	//display();
-	if (_kbhit())
+	if (mX < WIDTH_CONSOLE)
 	{
-		char key = _getch();
-		if (key == 'A' || key == 'a' && mX > 0)
-			Left();
-		else if (key == 'D' || key == 'd' && mX < consoleWidth)
-			Right();
-		else if (key == 'W' || key == 'w' && mY > 0)
-			Up();
-		else if (key == 'S' || key == 's' && mY < consoleHeight)
-			Down();
+		GotoXY(mX, mY);
+		cout << " ";
+		mX++;
+		GotoXY(mX, mY);
 	}
 }
+void CPEOPLE::Down()
+{
+	if (mY < HEIGHT_CONSOLE - 1)
+	{
+		GotoXY(mX, mY);
+		cout << " ";
+		mY++;
+		GotoXY(mX, mY);
+	}
+}
+ 
 bool CPEOPLE::isFinish()
 {
 	if (mY == 0)
@@ -90,13 +73,6 @@ bool CPEOPLE::isDead()
 		return true;
 	return false;
 }
-bool CPEOPLE::isImpact(CVEHICLE*& a)
-{
-	if (a->getx() - mX == 0 || a->gety() - mY == 0)
-		return true;
-	mState = true;
-	return false;
-}
 
 void ShowConsoleCursor(bool showFlag)
 {
@@ -105,20 +81,4 @@ void ShowConsoleCursor(bool showFlag)
 	GetConsoleCursorInfo(out, &cursorInfo);
 	cursorInfo.bVisible = showFlag; // set the cursor visibility
 	SetConsoleCursorInfo(out, &cursorInfo);
-}
-
-void doPeople()
-{
-	CPEOPLE x;
-	while (1)
-	{
-		x.Control();
-		if (x.isFinish())
-		{
-			GotoXY(x.getX(), x.getY());
-			cout << " ";
-			cout << "WIN";
-			return;
-		}
-	}
 }

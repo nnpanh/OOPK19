@@ -15,10 +15,9 @@
 #include "Console.h"
 #include "CPEOPLE.h"
 
-int HEIGHT_CONSOLE = 25, WIDTH_CONSOLE = 70;
 using namespace std;
 
-HANDLE consolehandle = GetStdHandle(STD_OUTPUT_HANDLE);
+//HANDLE consolehandle = GetStdHandle(STD_OUTPUT_HANDLE);
 
 
 class CGAME {
@@ -47,7 +46,7 @@ public:
 
 	void pauseGame(HANDLE); // Tạm dừng Thread
 	void resumeGame(HANDLE); //Quay lai Thread
-	//void updatePosPeople(char); //Thực hiện điều khiển di chuyển của CPEOPLE
+	void updatePosPeople(char); //Thực hiện điều khiển di chuyển của CPEOPLE
 	//void updatePosVehicle(); //Thực hiện cho CTRUCK & CCAR di chuyển
 	//void updatePosAnimal();//Thực hiện cho CDINAUSOR & CBIRD di chuyển
 };

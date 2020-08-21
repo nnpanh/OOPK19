@@ -1,3 +1,10 @@
-﻿  CVEHICLE.cpp
-D:\MINH\OOPK19\ProjectOOP\Project\CVEHICLE.cpp(224,26): warning C4018: '<': signed/unsigned mismatch
+﻿  CGAME.cpp
+D:\MINH\OOPK19\ProjectOOP\Project\CGAME.cpp(14,11): warning C4309: 'initializing': truncation of constant value
+D:\MINH\OOPK19\ProjectOOP\Project\CGAME.cpp(14,20): warning C4309: 'initializing': truncation of constant value
+D:\MINH\OOPK19\ProjectOOP\Project\CGAME.cpp(14,29): warning C4309: 'initializing': truncation of constant value
+D:\MINH\OOPK19\ProjectOOP\Project\CGAME.cpp(14,38): warning C4309: 'initializing': truncation of constant value
+D:\MINH\OOPK19\ProjectOOP\Project\CGAME.cpp(14,47): warning C4309: 'initializing': truncation of constant value
+D:\MINH\OOPK19\ProjectOOP\Project\CGAME.cpp(14,56): warning C4309: 'initializing': truncation of constant value
+D:\MINH\OOPK19\ProjectOOP\Project\CGAME.cpp(137,20): warning C4018: '<': signed/unsigned mismatch
+D:\MINH\OOPK19\ProjectOOP\Project\CGAME.cpp(140,20): warning C4018: '<': signed/unsigned mismatch
   Project.vcxproj -> D:\MINH\OOPK19\ProjectOOP\Debug\Project.exe

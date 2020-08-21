@@ -133,19 +133,19 @@ void CGAME::DrawBoardGame(int x, int y, int width, int height)
 
 void CGAME::drawGame(char sth)
 {
+	people.draw();
 	for (int i = 0; i < truck.size(); i++) {
 		truck[i].draw();
 	}
 	for (int i = 0; i < car.size(); i++) {
 		car[i].draw();
 	}
-	//for (int i = 0; i < dinausor.size(); i++) {
-	//	m_dinausor[i].draw(key);
-	//}
-	//for (int i = 0; i < bird.size(); i++) {
-	//	bird[i].draw(key);
-	//};
-	/*people.draw();*/
+	/*for (int i = 0; i < dinausor.size(); i++) {
+		m_dinausor[i].draw(key);
+	}
+	for (int i = 0; i < bird.size(); i++) {
+		bird[i].draw(key);
+	};*/
 }
 
 CPEOPLE& CGAME::getPeople() {
@@ -181,4 +181,24 @@ void CGAME::startGame() {
 	system("cls");
 	//resetGame();
 	DrawBoardGame(0, 0, WIDTH_CONSOLE, HEIGHT_CONSOLE);
+}
+
+void CGAME::updatePosPeople(char key)
+{
+	ShowConsoleCursor(false);
+	switch (key) {
+	case 'A':
+		people.Left();
+		break;
+	case 'D':
+		people.Right();
+		break;
+	case 'W':
+		people.Up();
+		break;
+	case 'S':
+		people.Down();
+		break;
+	}
+
 }
