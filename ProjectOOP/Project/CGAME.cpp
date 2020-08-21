@@ -1,9 +1,15 @@
 ﻿#include "CGame.h"
-#include "Console.h"
 
+CGAME::CGAME()
+{
+	// Level 1 has at least two in one line
+	car.resize(2);
+	truck.resize(2);
+	/*bird.resize(2);
+	dinausor.resize(2);*/
+}
 
-
-void CGAME::drawGame(int x, int y, int width, int height)
+void CGAME::DrawBoardGame(int x, int y, int width, int height)
 {
 	char k = 205, a = 186, b = 187, c = 188, d = 201, e = 200;
 	/*doimau(241);*/
@@ -125,7 +131,54 @@ void CGAME::drawGame(int x, int y, int width, int height)
 	GotoXY(26, 26);
 }
 
+void CGAME::drawGame(char sth)
+{
+	for (int i = 0; i < truck.size(); i++) {
+		truck[i].draw();
+	}
+	for (int i = 0; i < car.size(); i++) {
+		car[i].draw();
+	}
+	//for (int i = 0; i < dinausor.size(); i++) {
+	//	m_dinausor[i].draw(key);
+	//}
+	//for (int i = 0; i < bird.size(); i++) {
+	//	bird[i].draw(key);
+	//};
+	/*people.draw();*/
+}
+
+CPEOPLE& CGAME::getPeople() {
+	return people;
+}
+vector <CTRUCK>& CGAME::getTruck() {
+	return truck;
+}
+vector <CCAR>& CGAME::getCar() {
+	return car;
+}
+//vector <CDINAUSOR>& CGame::getDinausor() {
+//	return m_dinausor;
+//}
+//vector <CBIRD>& CGame::getBird() {
+//	return m_bird;
+//}
+
 void CGAME::pauseGame(HANDLE t)
 {
 	SuspendThread(t);
+}
+
+void CGAME::resumeGame(HANDLE t) {
+	ResumeThread(t);
+}
+
+void CGAME::exitGame(HANDLE t) {
+	TerminateThread(t, 0);
+}
+
+void CGAME::startGame() {
+	system("cls");
+	resetGame();
+	DrawBoardGame(0, 0, WIDTH_CONSOLE, HEIGHT_CONSOLE);
 }
