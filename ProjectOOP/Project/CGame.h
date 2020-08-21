@@ -11,6 +11,7 @@
 #include <thread>
 #include <fstream>
 #include <malloc.h>
+#include "CVEHICLE.h"
 int HEIGHT_CONSOLE = 25, WIDTH_CONSOLE = 70;
 using namespace std;
 
