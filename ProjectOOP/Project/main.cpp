@@ -7,7 +7,7 @@
 int main()
 {
 	FixConsoleWindow();
-	_setmode(_fileno(stdout), _O_U16TEXT);
+	//_setmode(_fileno(stdout), _O_U16TEXT);
 	
 	CONTROL_VEHICLE myVehicle;
 	//thread vehicle(doSth);

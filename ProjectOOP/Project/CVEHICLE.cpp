@@ -20,24 +20,24 @@ int CCAR::getType() {
 void CCAR::draw()
 {
 	GotoXY(mX, mY);
-	wcout << L"\u2588\u2588\u2588\u2588";
+	cout << (char)219<<(char)219 << (char)219 << (char)219;
 	GotoXY(mX - 2, mY + 1);
-	wcout << L"\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588";
+	cout << (char)219 << (char)219 << (char)219 << (char)219 << (char)219 << (char)219 << (char)219 << (char)219;
 	GotoXY(mX - 1, mY + 2);
-	wcout << L"\u25cf";
+	cout << (char)79;
 	GotoXY(mX + 4, mY + 2);
-	wcout << L"\u25cf";
+	cout << (char)79;
 }
 void CCAR::erase()
 {
 	GotoXY(mX, mY);
-	wcout << L"\u2003\u2003\u2003\u2003";
+	cout << "    ";
 	GotoXY(mX - 2, mY + 1);
-	wcout << L"\u2003\u2003\u2003\u2003\u2003\u2003\u2003\u2003";
+	cout << "        ";
 	GotoXY(mX - 1, mY + 2);
-	wcout << L"\u2003";
+	cout << " ";
 	GotoXY(mX + 4, mY + 2);
-	wcout << L"\u2003";
+	cout << " ";
 }
 
 void CCAR::move(int X, int Y)
@@ -65,25 +65,25 @@ int CTRUCK::getType() {
 void CTRUCK::draw()
 {
 	GotoXY(mX, mY);
-	wcout << L"\u2588\u2588\u2588\u2588\u2588";
+	cout << (char)219 << (char)219 << (char)219 << (char)219<<(char)219;
 	GotoXY(mX, mY + 1);
-	wcout << L"\u2588\u2588\u2588\u2588\u2588\u2588\u2588";
+	cout<<  (char)219 << (char)219 << (char)219 << (char)219 << (char)219 << (char)219 << (char)219;
 	GotoXY(mX + 1, mY + 2);
-	wcout << L"\u25cf";
+	cout << (char)79;
 	GotoXY(mX + 4, mY + 2);
-	wcout << L"\u25cf";
+	cout << (char)79;
 
 }
 void CTRUCK::erase()
 {
 	GotoXY(mX, mY);
-	wcout << L"\u2003\u2003\u2003\u2003\u2003";
+	cout << "     ";
 	GotoXY(mX, mY + 1);
-	wcout << L"\u2003\u2003\u2003\u2003\u2003\u2003\u2003";
+	cout << "       ";
 	GotoXY(mX + 1, mY + 2);
-	wcout << L"\u2003";
+	cout << " ";
 	GotoXY(mX + 4, mY + 2);
-	wcout << L"\u2003";
+	cout << " ";
 }
 
 
