@@ -15,6 +15,7 @@ using namespace std;
 void doPeople();
 class CPEOPLE {
 private:
+	char a[1][3];
 	int mX, mY;
 	bool mState;
 public:

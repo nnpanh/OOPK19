@@ -3,11 +3,13 @@
 CPEOPLE::CPEOPLE()
 {
 	mX = WIDTH_CONSOLE/2;
-	mY = HEIGHT_CONSOLE-1;
+	mY = HEIGHT_CONSOLE-3;
+	mState = false;
 }
 
 void CPEOPLE::draw()
 {
+	GotoXY(mX, mY);
 	cout << "Y";
 }
 int CPEOPLE::getX()
@@ -23,41 +25,38 @@ void CPEOPLE::Up()
 	if(mY > 1)
 	{
 		GotoXY(mX, mY);
-		cout << " ";
-		mY--;
-		GotoXY(mX, mY);
+		cout << "  ";
+		mY-= 4;
+		
 	}
 }
 
 void CPEOPLE::Left()
 {
-	if (mX > 2)
+	if (mX > 3)
 	{
 		GotoXY(mX, mY);
-		cout << " ";
-		mX--;
-		GotoXY(mX, mY);
+		cout << "  ";
+		mX-=2;
 	}
 }
 
 void CPEOPLE::Right()
 {
-	if (mX < WIDTH_CONSOLE)
+	if (mX < WIDTH_CONSOLE-2)
 	{
 		GotoXY(mX, mY);
-		cout << " ";
-		mX++;
-		GotoXY(mX, mY);
+		cout << "  ";
+		mX+=2;
 	}
 }
 void CPEOPLE::Down()
 {
-	if (mY < HEIGHT_CONSOLE - 1)
+	if (mY < HEIGHT_CONSOLE - 3)
 	{
 		GotoXY(mX, mY);
-		cout << " ";
-		mY++;
-		GotoXY(mX, mY);
+		cout << "  ";
+		mY+=4;
 	}
 }
  

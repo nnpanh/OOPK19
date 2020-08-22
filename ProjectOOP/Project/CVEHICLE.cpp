@@ -173,7 +173,7 @@ void CONTROL_VEHICLE::MoveAll(int xTruck, int yTruck, int xCar, int yCar)
 }
 void CONTROL_VEHICLE::EraseAll()
 {
-	system("cls");
+	//system("cls");
 	auto count_TRUCK = 0;
 	auto count_CAR = 0;
 	int number_of_Vehicle = Running_Vehicle.size();
