@@ -41,8 +41,8 @@ public:
 
 	void exitGame(HANDLE); // Thực hiện thoát Thread
 	void startGame(); // Thực hiện bắt đầu vào trò chơi
-	////void loadGame(istream); // Thực hiện tải lại trò chơi đã lưu
-	////void saveGame(istream); // Thực hiện lưu lại dữ liệu trò chơi
+	void loadGame(ifstream &fin,string file); // Thực hiện tải lại trò chơi đã lưu
+	void saveGame(ofstream &fout,string file); // Thực hiện lưu lại dữ liệu trò chơi
 
 	void pauseGame(HANDLE); // Tạm dừng Thread
 	void resumeGame(HANDLE); //Quay lai Thread

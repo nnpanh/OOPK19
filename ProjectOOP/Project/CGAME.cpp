@@ -183,6 +183,40 @@ void CGAME::startGame() {
 	DrawBoardGame(0, 0, WIDTH_CONSOLE, HEIGHT_CONSOLE);
 }
 
+void CGAME::saveGame(ofstream &fout,string file)
+{
+	file = file + ".txt";
+	fout.open(file.c_str());
+	if (!fout)
+	{
+		/*GotoXY(x,y)*/ //hien thi tren console tai dau
+		cout << "Cant not open file to save" << endl;
+		exit(0);
+	}
+	else
+	{
+		fout << car.size(); //luu vao file so xe tu do suy ra level
+	}
+}
+
+void CGAME::loadGame(ifstream& fin, string file)
+{
+	int num;
+	file = file + ".txt";
+	fin.open(file.c_str());
+	if (!fin)
+	{
+		/*GotoXY(x,y)*/ //hien thi tren console tai dau
+		cout << "Cant not open file to save" << endl;
+		exit(0);
+	}
+	else
+	{
+		fin >> num;
+		/*people.setlevel(num);*/ //lay dc level va set level
+	}
+}
+
 void CGAME::updatePosPeople(char key)
 {
 	ShowConsoleCursor(false);
