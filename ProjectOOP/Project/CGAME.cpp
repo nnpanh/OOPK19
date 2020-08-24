@@ -236,3 +236,11 @@ void CGAME::updatePosPeople(char key)
 	}
 
 }
+
+void CGAME::updatePosVehicle()
+{
+	for (int i = 0; i < truck.size(); i++)
+		truck[i].move();
+	for (int i = 0; i < car.size(); i++)
+		car[i].move();
+}
