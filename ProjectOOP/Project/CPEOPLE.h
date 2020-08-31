@@ -21,7 +21,7 @@ public:
 
 	template<class T>
 	bool isImpact(vector <T> obj) {
-		for (int i = 0; i < ob.size(); i++) {
+		for (int i = 0; i < obj.size(); i++) {
 			if (obj[i].isImpact(a)) {
 				return true;
 			}

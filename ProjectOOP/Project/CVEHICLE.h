@@ -28,7 +28,6 @@ class CTRUCK final :public CVEHICLE
 {
 public:
 	CTRUCK();
-	~CTRUCK();
 	void move();
 	void set(Point);
 };
@@ -37,15 +36,14 @@ class CCAR final :public CVEHICLE
 {
 public:
 	CCAR();
-	~CCAR();
-	void move();
+		void move();
 	void set(Point);
 };
 
 class Traffic
 {
 protected:
-	int m_trafficLight; //0 is red and other is green
+	int trafficLight; //0 is red and other is green
 public:
 	Traffic();
 	void changeLight();

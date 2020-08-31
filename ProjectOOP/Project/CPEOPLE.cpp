@@ -69,14 +69,28 @@ void CPEOPLE::setPoint(Point p) {
 void CPEOPLE::setState(bool state) {
 	state = state;
 }
-void CPEOPLE::setLevel(int level) {
-	level = level;
+void CPEOPLE::setLevel(int lv) {
+	level = lv;
 }
 
 bool CPEOPLE::isFinish()
 {
+	return (level == MAX_LEVEL);
 }
 bool CPEOPLE::isDead()
 {
+	return !state;
 }
 
+bool CPEOPLE::isLevelUp() {
+	return (level < MAX_LEVEL&& a[0].m_y == 3);
+}
+int& CPEOPLE::getLevel() {
+	return level;
+}
+Point& CPEOPLE::getFirstPoint() {
+	return a[0];
+}
+bool& CPEOPLE::getState() {
+	return state;
+}

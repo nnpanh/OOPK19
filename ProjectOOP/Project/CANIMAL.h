@@ -4,7 +4,7 @@
 class CANIMAL
 {
 protected:
-	vector<Point> m_p;
+	vector<Point> a;
 public:
 	virtual void move() = 0;
 	virtual void set(Point) = 0;

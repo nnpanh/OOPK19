@@ -87,3 +87,32 @@ void CCAR::set(Point p) {
 }
 
 
+//TRAFFIC LIGHT
+void Traffic::drawLight(int x, int y, int key) {
+	gotoXY(x, y);
+	if (trafficLight != 0) {
+		setColor(2);
+		cout << char(key);
+	}
+	else {
+		setColor(4);
+		cout << char(key);
+	}
+}
+Traffic::Traffic() {
+	trafficLight = 0;
+}
+void Traffic::changeLight() {
+	if (trafficLight == 0) {
+		trafficLight = 1;
+	}
+	else {
+		trafficLight = 0;
+	}
+}
+int& Traffic::getLight() {
+	return trafficLight;
+}
+void Traffic::setLight(int light) {
+	trafficLight = light;
+}

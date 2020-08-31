@@ -1,3 +1,4 @@
+#pragma once
 #include "CGame.h"
 #include<thread>
 #include<conio.h>
@@ -9,93 +10,26 @@ int sleepTime = 80;
 char MOVING;
 CGAME* g;
 
-void subThread() {
-	int timeTraffic = 0;
-	while (1) {
-		int temp = timeTraffic % 200;
-		if (!g->getPeople().isDead()) {
-			g->drawGame(255);
-			gotoXY(WIDTH + 8, HEIGHT / 2);
-			cout << "Level: " << g->getPeople().getLevel();
-			gotoXY(WIDTH + 8, HEIGHT / 2 + 1);
-			if (sound)
-				cout << "Sound: On";
-			else
-				cout << "Sound: Off";
-			g->updatePosPeople(MOVING);
-			MOVING = ' ';
-			if (temp == 60) {
-				g->getTrafficLight().changeLight();
-			}
-			if (temp == 199) {
-				g->getTrafficLight().changeLight();
-			}
-			if (g->getTrafficLight().getLight() != 0) {
-				g->updatePosVehicle();
-			}
-			g->updatePosAnimal();
-			g->drawGame(219);
-			if (g->getPeople().isImpact(g->getTruck()) ||
-				g->getPeople().isImpact(g->getCar()) ||
-				g->getPeople().isImpact(g->getBird()) ||
-				g->getPeople().isImpact(g->getDinausor())) {
-				if (sound) {
-					mciSendString(TEXT("stop Background.mp3"), NULL, 0, NULL);
-					mciSendString(TEXT("play Endgame.mp3"), NULL, 0, NULL);
-				}
-				animation(0, 0, WIDTH, HEIGHT, 0, 0);
-				gotoXY(0, HEIGHT + 1);
-				cout << "Dead, press Y to start a new game!";
-				g->getPeople().setState(false);
-			}
-			else if (g->getPeople().isFinish()) {
-				g->drawGame(255);
-				g->getPeople().setLevel(2);
-				g->resize(2);
-				g->resetGame();
-			}
-			else if (g->getPeople().isLevelUp()) {
-				g->drawGame(255);
-				g->getPeople().setLevel(g->getPeople().getLevel() + 1);
-				g->resize(g->getPeople().getLevel());
-				g->resetGame();
-			}
-			if (timeTraffic == 70) {
-				if (sound) {
-					mciSendString(TEXT("play BIRD.mp3"), NULL, 0, NULL);
-				}
-			}
-			if (timeTraffic == 120) {
-				if (sound) {
-					mciSendString(TEXT("play DINAUSOR.mp3"), NULL, 0, NULL);
-				}
-			}
-			if (timeTraffic == 200)
-				timeTraffic = 0;
-			else
-				timeTraffic++;
-			Sleep(sleepTime);
-		}
-	}
-}
+void SubThread();
 
 void main() {
+	ShowConsoleCursor(false);
 	int temp;
 	g = new CGAME();
 	fixConsoleWindow();
 	setColor(15);
 	drawBox(0, 0, WIDTH, HEIGHT, 0, 0);
-	setColor(2);
-	loading(0, 0, WIDTH, HEIGHT, 0, 0);
-	if (sound) {
+	//setColor(2);
+	//loading(0, 0, WIDTH, HEIGHT, 0, 0);
+	/*if (sound) {
 		mciSendString(TEXT("play BACKGROUND.mp3 repeat"), NULL, 0, NULL);
-	}
+	}*/
 	setColor(15);
 	system("cls");
 	drawBox(0, 0, WIDTH, HEIGHT, 0, 0);
 	gotoXY(WIDTH / 2 - 5, HEIGHT / 2 - 3);
 	//draw word "crossy road"
-	setColor(9);
+	/*setColor(9);
 	gotoXY(10, 2);
 	cout << "                                                                  .___";
 	gotoXY(10, 3);
@@ -107,7 +41,7 @@ void main() {
 	gotoXY(10, 6);
 	cout << " \\___  >__|   \\____/____  >____  >/ ____|  |__|   \\____(____  |____ | ";
 	gotoXY(10, 7);
-	cout << "     \\/                 \\/     \\/ \\/                        \\/     \\/ ";
+	cout << "     \\/                 \\/     \\/ \\/                        \\/     \\/ ";*/
 	gotoXY(WIDTH / 2 - 5, HEIGHT / 2 - 1);
 	setColor(128);
 	cout << "Start Game";
@@ -117,7 +51,7 @@ void main() {
 	gotoXY(WIDTH / 2 - 5, HEIGHT / 2 + 1);
 	cout << "Setting";
 	int curChosen = 0;
-	thread t1(subThread);
+	std::thread t1(SubThread);
 	HANDLE handle_t1 = t1.native_handle();
 	g->pauseGame(handle_t1);
 	while (1) {
@@ -314,11 +248,11 @@ void main() {
 								else if (temp == 13) {
 									if (curSound == 0) {
 										sound = true;
-										mciSendString(TEXT("play BACKGROUND.mp3 repeat"), NULL, 0, NULL);
+										//mciSendString(TEXT("play BACKGROUND.mp3 repeat"), NULL, 0, NULL);
 									}
 									else {
 										sound = false;
-										mciSendString(TEXT("stop BACKGROUND.mp3"), NULL, 0, NULL);
+										//mciSendString(TEXT("stop BACKGROUND.mp3"), NULL, 0, NULL);
 									}
 								}
 								else if (temp == 27) {
@@ -456,9 +390,9 @@ void main() {
 				g->resize(2);
 				g->startGame();
 				g->resumeGame(handle_t1);
-				if (sound) {
-					mciSendString(TEXT("play BACKGROUND.mp3 repeat"), NULL, 0, NULL);
-				}
+				//if (sound) {
+					//mciSendString(TEXT("play BACKGROUND.mp3 repeat"), NULL, 0, NULL);
+				//}
 			}
 			else {
 				g->exitGame(handle_t1);
@@ -467,4 +401,74 @@ void main() {
 		}
 	}
 	t1.join();
+}
+
+void SubThread() {
+	int timeTraffic = 0;
+	while (1) {
+		int temp = timeTraffic % 200;
+		if (!g->getPeople().isDead()) {
+			g->drawGame(255);
+			gotoXY(WIDTH + 8, HEIGHT / 2);
+			cout << "Level: " << g->getPeople().getLevel();
+			gotoXY(WIDTH + 8, HEIGHT / 2 + 1);
+			if (sound)
+				cout << "Sound: On";
+			else
+				cout << "Sound: Off";
+			g->updatePosPeople(MOVING);
+			MOVING = ' ';
+			if (temp == 60) {
+				g->getTrafficLight().changeLight();
+			}
+			if (temp == 199) {
+				g->getTrafficLight().changeLight();
+			}
+			if (g->getTrafficLight().getLight() != 0) {
+				g->updatePosVehicle();
+			}
+			g->updatePosAnimal();
+			g->drawGame(219);
+			if (g->getPeople().isImpact(g->getTruck()) ||
+				g->getPeople().isImpact(g->getCar()) ||
+				g->getPeople().isImpact(g->getBird()) ||
+				g->getPeople().isImpact(g->getDinausor())) {
+				//if (sound) {
+				//	mciSendString(TEXT("stop Background.mp3"), NULL, 0, NULL);
+				//	mciSendString(TEXT("play Endgame.mp3"), NULL, 0, NULL);
+				//}
+				animation(0, 0, WIDTH, HEIGHT, 0, 0);
+				gotoXY(0, HEIGHT + 1);
+				cout << "Dead, press Y to start a new game!";
+				g->getPeople().setState(false);
+			}
+			else if (g->getPeople().isFinish()) {
+				g->drawGame(255);
+				g->getPeople().setLevel(2);
+				g->resize(2);
+				g->resetGame();
+			}
+			else if (g->getPeople().isLevelUp()) {
+				g->drawGame(255);
+				g->getPeople().setLevel(g->getPeople().getLevel() + 1);
+				g->resize(g->getPeople().getLevel());
+				g->resetGame();
+			}
+			/*if (timeTraffic == 70) {
+				if (sound) {
+					mciSendString(TEXT("play BIRD.mp3"), NULL, 0, NULL);
+				}
+			}
+			if (timeTraffic == 120) {
+				if (sound) {
+					mciSendString(TEXT("play DINAUSOR.mp3"), NULL, 0, NULL);
+				}
+			}*/
+			if (timeTraffic == 200)
+				timeTraffic = 0;
+			else
+				timeTraffic++;
+			Sleep(sleepTime);
+		}
+	}
 }
