@@ -1,53 +1,56 @@
 ﻿#pragma once
-#ifndef _CGAME_H_
-#define _CGAME_H_
-
-#include <iostream>
-#include <conio.h>
-#include <Windows.h> // Main of the board
-#include <time.h>
-#include <stdlib.h>
-#include <string>
-#include <thread>
-#include <fstream>
-#include <malloc.h>
-#include "CVEHICLE.h"
-#include "Console.h"
 #include "CPEOPLE.h"
+#include "CANIMAL.h"
+#include "CVEHICLE.h"
+#include <fstream>
+#include <sstream>
 
-using namespace std;
-
-//HANDLE consolehandle = GetStdHandle(STD_OUTPUT_HANDLE);
-
-
-class CGAME {
-	vector<CTRUCK> truck;
-	vector<CCAR> car;
-	/*vector<CDINAUSOR> dinausor;*/
-	/*vector<CBIRD> bird;*/
-	CPEOPLE people;
+class Game
+{
+private:
+	vector <Truck> m_truck;
+	vector <Car> m_car;
+	vector <Dinausor> m_dinausor;
+	vector <Bird> m_bird;
+	/*TrafficLight m_trafficLight;
+	People m_people;*/
 public:
-	CGAME(); //Chuẩn bị dữ liệu cho tất cả các đối tượng
-	void DrawBoardGame(int x, int y, int width, int height); //Thực hiện vẽ trò chơi ra màn hình sau khi có dữ liệu
-	void drawGame(char); //ve nguoi xe thu
-	//~CGAME(); // Hủy tài nguyên đã cấp phát
-	CPEOPLE& getPeople();
-	vector <CTRUCK>& getTruck();
-	vector <CCAR>& getCar();
-	//vector <CDinausor>& getDinausor();
-	//vector <CBird>& getBird();
+	Game();
 
-	//void resetGame(); // havent done 
+	void resize(int); //resize number of object/vector
 
-	void exitGame(HANDLE); // Thực hiện thoát Thread
-	void startGame(); // Thực hiện bắt đầu vào trò chơi
-	void loadGame(ifstream &fin,string file); // Thực hiện tải lại trò chơi đã lưu
-	void saveGame(ofstream &fout,string file); // Thực hiện lưu lại dữ liệu trò chơi
+	void drawGame(char);//draw people, animals and vehicles
 
-	void pauseGame(HANDLE); // Tạm dừng Thread
-	void resumeGame(HANDLE); //Quay lai Thread
-	void updatePosPeople(char); //Thực hiện điều khiển di chuyển của CPEOPLE
-	void updatePosVehicle(); //Thực hiện cho CTRUCK & CCAR di chuyển
-	//void updatePosAnimal();//Thực hiện cho CDINAUSOR & CBIRD di chuyển
+	People& getPeople();
+	vector <Truck>& getTruck();
+	vector <Car>& getCar();
+	vector <Dinausor>& getDinausor();
+	vector <Bird>& getBird();
+	TrafficLight& getTrafficLight();
+
+	//reset the game to the beginning
+	void resetGame();
+
+	//exit the game
+	void exitGame(HANDLE);
+
+	//start the game
+	void startGame();
+
+	//load the exist data from the *.txt file
+	void loadGame(string);
+
+	//save the game to the *.txt file
+	void saveGame(string);
+
+	//pause the game
+	void pauseGame(HANDLE);
+
+	//resume the game
+	void resumeGame(HANDLE);
+
+	//update the new position of object
+	void updatePosPeople(char);
+	void updatePosVehicle();
+	void updatePosAnimal();
 };
-#endif
