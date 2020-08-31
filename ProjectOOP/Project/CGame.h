@@ -5,28 +5,28 @@
 #include <fstream>
 #include <sstream>
 
-class Game
+class CGAME
 {
 private:
-	vector <Truck> m_truck;
-	vector <Car> m_car;
+	vector <CTRUCK> m_truck;
+	vector <CCAR> m_car;
 	vector <Dinausor> m_dinausor;
 	vector <Bird> m_bird;
-	/*TrafficLight m_trafficLight;
-	People m_people;*/
+	Traffic trafficLight;
+	CPEOPLE people;
 public:
-	Game();
+	CGAME();
 
 	void resize(int); //resize number of object/vector
 
 	void drawGame(char);//draw people, animals and vehicles
 
-	People& getPeople();
-	vector <Truck>& getTruck();
-	vector <Car>& getCar();
+	CPEOPLE& getPeople();
+	vector <CTRUCK>& getTruck();
+	vector <CCAR>& getCar();
 	vector <Dinausor>& getDinausor();
 	vector <Bird>& getBird();
-	TrafficLight& getTrafficLight();
+	Traffic& getTrafficLight();
 
 	//reset the game to the beginning
 	void resetGame();

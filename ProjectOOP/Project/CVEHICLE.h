@@ -1,15 +1,7 @@
 #ifndef _CVEHICLE_H_
 #define _CVEHICLE_H_
 
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <thread>
-#include <Windows.h>
-#include <io.h>
-#include <fcntl.h>
 #include "Console.h"
-using namespace std;
 
 #define MAXLEVEL 5
 #define MAXWIDTH 100
@@ -22,73 +14,45 @@ using namespace std;
 class CVEHICLE //abstract
 {
 protected:
-	int mX, mY;
+	vector<Point> a;
 public:
-	CVEHICLE();
-	CVEHICLE(int x,int y);
-	virtual void move(int X, int Y) = 0;
-	virtual void erase() = 0;
-	virtual void draw() = 0;
-	virtual int getWidth() = 0;
-	virtual int getx()
-	{
-		return mX;
-	}
-	virtual int gety()
-	{
-		return mY;
-	}
-	virtual int getType() = 0;//1=truck 2= car
-	void Move_border(int& xVehicle, int yVehicle, int& count);
+	virtual void move() = 0;
+	virtual void set(Point) = 0;
+	bool isImpact(vector <Point>);
+	void draw(char);
+	Point getFirstPoint();
 	
 };
+
 class CTRUCK final :public CVEHICLE
 {
-private:
-	int length, width;
 public:
 	CTRUCK();
-	CTRUCK(int x, int y);
 	~CTRUCK();
-	void move(int X, int Y) override;
-	void draw();
-	void erase();
-	int getWidth();
-	int getType();
+	void move();
+	void set(Point);
 };
+
 class CCAR final :public CVEHICLE
 {
-private:
-	int length, width;
 public:
 	CCAR();
-	CCAR(int x, int y);
 	~CCAR();
-	void move(int X, int Y) override;
-	void draw();
-	void erase();
-	int getWidth();
-	int getType();
+	void move();
+	void set(Point);
 };
 
-class CONTROL_VEHICLE {
-private:
-	int CAR_NUM[MAXLEVEL+1];
-	int TRUCK_NUM[MAXLEVEL+1];
-	int cur_level;
-	int cur_CAR_NUM;
-	int cur_TRUCK_NUM;
-	bool crash;
-	vector <CVEHICLE*> Running_Vehicle;
+class Traffic
+{
+protected:
+	int m_trafficLight; //0 is red and other is green
 public:
-	CONTROL_VEHICLE();
-	~CONTROL_VEHICLE();	
-	bool state(bool isDead); //DEAD OR ALIVE
-	void update_Vehicle_level(int level); //UPDATE LEVEL AND NUMBER OF VEHICLE
-	void MoveAll(int xTruck, int yTruck, int xCar, int yCar);
-	void EraseAll();
-	void Run(int state,int level,int xTruck,int yTruck,int xCar,int yCar);
+	Traffic();
+	void changeLight();
+	int& getLight();
+	void drawLight(int, int, int);
+	void setLight(int);
 };
 
-void doVehicle();
+
 #endif

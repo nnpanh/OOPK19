@@ -2,42 +2,48 @@
 #ifndef _CPEOPLE_
 #define _CPEOPLE_
 
-#include <iostream>
-#include <conio.h>
-#include <cstring>
-#include <windows.h>
-#include <vector>
-#include "CVEHICLE.h"
 #include "Console.h"
-using namespace std;
+const int MAX_LEVEL = 6;
 
-
-void doPeople();
 class CPEOPLE {
 private:
-	char a[1][3];
-	int mX, mY;
-	bool mState;
+	vector<Point> a;
+	bool state;
+	int level;
 public:
-	int getX();
-	int getY();
-	void draw();
 	CPEOPLE();
+	void draw(char key);
+
 	void Up();
 	void Left();
 	void Right();
 	void Down();
-	//template<class T>
-	/*bool isImpact(vector <T> ob) {
+
+	template<class T>
+	bool isImpact(vector <T> obj) {
 		for (int i = 0; i < ob.size(); i++) {
-			if (ob[i].isImpact(m_p)) {
+			if (obj[i].isImpact(a)) {
 				return true;
 			}
 		}
 		return false;
-	}*/
+	}
+
+	//set the people data
+	void setPoint(Point);
+	void setState(bool);
+	void setLevel(int);
+
 	bool isFinish();
 	bool isDead();
+
+	//check the level of people
+	bool isLevelUp();
+	//get level of people
+	int& getLevel();
+	Point& getFirstPoint();
+	bool& getState();
+
 };
 
 

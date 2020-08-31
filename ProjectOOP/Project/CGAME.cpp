@@ -1,19 +1,19 @@
 ﻿#include"CGAME.h"
 
-Game::Game() {
+CGAME::CGAME() {
 	m_truck.resize(2);
 	m_car.resize(2);
 	m_bird.resize(2);
 	m_dinausor.resize(2);
 }
-void Game::resize(int newSize) {
+void CGAME::resize(int newSize) {
 	m_truck.resize(newSize);
 	m_car.resize(newSize);
 	m_bird.resize(newSize);
 	m_dinausor.resize(newSize);
 }
 
-void Game::drawGame(char key) {
+void CGAME::drawGame(char key) {
 	setColor(1);
 	for (int i = 0; i < m_truck.size(); i++) {
 		m_truck[i].draw(key);
@@ -31,26 +31,26 @@ void Game::drawGame(char key) {
 		m_bird[i].draw(key);
 	}
 	setColor(5);
-	m_people.draw(key);
+	people.draw(key);
 	getTrafficLight().drawLight(1, 17, 219);
 	getTrafficLight().drawLight(WIDTH - 2, 13, 219);
 	setColor(15);
 }
-People& Game::getPeople() {
-	return m_people;
+CPEOPLE& CGAME::getPeople() {
+	return people;
 }
-vector <Truck>& Game::getTruck() {
+vector <CTRUCK>& CGAME::getTruck() {
 	return m_truck;
 }
-vector <Car>& Game::getCar() {
+vector <CCAR>& CGAME::getCar() {
 	return m_car;
 }
-vector <Dinausor>& Game::getDinausor() {
+vector <Dinausor>& CGAME::getDinausor() {
 	return m_dinausor;
 }
-vector <Bird>& Game::getBird() {
+vector <Bird>& CGAME::getBird() {
 	return m_bird;
 }
-TrafficLight& Game::getTrafficLight() {
-	return m_trafficLight;
+Traffic& CGAME::getTrafficLight() {
+	return trafficLight;
 }
