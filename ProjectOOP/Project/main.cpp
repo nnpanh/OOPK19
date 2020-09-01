@@ -7,11 +7,10 @@
 int main()
 {
 	FixConsoleWindow();
-	//_setmode(_fileno(stdout), _O_U16TEXT);
+
 	
-	/*CONTROL_VEHICLE myVehicle;
-	//thread vehicle(doSth);
-	//vehicle.join();
+	CONTROL_VEHICLE myVehicle;
+
 	do
 	{
 		for (int j = BORDER; j < MAXWIDTH; j += space)
@@ -21,14 +20,14 @@ int main()
 			myVehicle.EraseAll();
 			Sleep(10);
 		}
-	} while (GetAsyncKeyState(VK_ESCAPE) == 0);*/
+	} while (GetAsyncKeyState(VK_ESCAPE) == 0);
 
-	thread people(doPeople);
+	/*thread people(doPeople);
 	thread vehicle(doVehicle);
 
 
 	vehicle.join();
-	people.join();
+	people.join();*/
 	return 0;
 
 }

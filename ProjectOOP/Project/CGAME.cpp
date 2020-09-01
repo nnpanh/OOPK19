@@ -179,6 +179,6 @@ void CGAME::exitGame(HANDLE t) {
 
 void CGAME::startGame() {
 	system("cls");
-	resetGame();
+	//resetGame();
 	DrawBoardGame(0, 0, WIDTH_CONSOLE, HEIGHT_CONSOLE);
 }
