@@ -24,6 +24,7 @@ struct Point
 
 //void draw_ambulance();
 
+//lock ratio
 void fixConsoleWindow();
 
 //go to the coordinate (x,y) on the screen

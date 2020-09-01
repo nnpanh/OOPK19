@@ -29,7 +29,7 @@ public:
 		return false;
 	}
 
-	//set the people data
+	//set people data
 	void setPoint(Point);
 	void setState(bool);
 	void setLevel(int);
@@ -37,8 +37,9 @@ public:
 	bool isFinish();
 	bool isDead();
 
-	//check the level of people
+	//check level of people
 	bool isLevelUp();
+
 	//get level of people
 	int& getLevel();
 	Point& getFirstPoint();

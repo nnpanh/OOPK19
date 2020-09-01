@@ -8,8 +8,6 @@ COMPUTERNAME = MSI
 ComSpec = C:\WINDOWS\system32\cmd.exe
 configsetroot = C:\WINDOWS\ConfigSetRoot
 DriverData = C:\Windows\System32\Drivers\DriverData
-FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
-FPS_BROWSER_USER_PROFILE_STRING = Default
 HOMEDRIVE = C:
 HOMEPATH = \Users\USER
 LOCALAPPDATA = C:\Users\USER\AppData\Local
@@ -33,8 +31,9 @@ ProgramFiles(x86) = C:\Program Files (x86)
 ProgramW6432 = C:\Program Files
 PSModulePath = C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
 PUBLIC = C:\Users\Public
-ServiceHubLogSessionKey = 393A414B
+ServiceHubLogSessionKey = E07E2218
 SESSIONNAME = Console
+SignInWithHomeTenantOnly = False
 SystemDrive = C:
 SystemRoot = C:\WINDOWS
 TEMP = C:\Users\USER\AppData\Local\Temp
@@ -53,5 +52,92 @@ VSLANG = 1033
 VSSKUEDITION = Community
 windir = C:\WINDOWS
 
+  CANIMAL.cpp
+D:\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma 'onces'
+D:\OOPK19\ProjectOOP\Project\CANIMAL.cpp(4,20): warning C4018: '<': signed/unsigned mismatch
+D:\OOPK19\ProjectOOP\Project\CANIMAL.cpp(5,21): warning C4018: '<': signed/unsigned mismatch
+D:\OOPK19\ProjectOOP\Project\CANIMAL.cpp(14,20): warning C4018: '<': signed/unsigned mismatch
+D:\OOPK19\ProjectOOP\Project\CANIMAL.cpp(29,20): warning C4018: '<': signed/unsigned mismatch
+D:\OOPK19\ProjectOOP\Project\CANIMAL.cpp(50,20): warning C4018: '<': signed/unsigned mismatch
+  CGAME.cpp
+D:\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma 'onces'
+D:\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma 'onces'
+D:\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma 'onces'
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(14,11): warning C4309: 'initializing': truncation of constant value
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(14,20): warning C4309: 'initializing': truncation of constant value
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(14,29): warning C4309: 'initializing': truncation of constant value
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(14,38): warning C4309: 'initializing': truncation of constant value
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(14,47): warning C4309: 'initializing': truncation of constant value
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(14,56): warning C4309: 'initializing': truncation of constant value
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(19,3): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(21,3): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(27,3): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(29,3): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(35,3): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(40,3): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(45,3): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(50,3): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(55,3): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(60,2): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(62,2): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(64,2): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(66,2): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(68,2): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(70,2): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(72,2): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(74,2): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(76,2): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(78,2): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(80,2): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(82,2): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(84,2): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(86,2): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(90,3): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(92,3): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(97,3): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(99,3): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(104,2): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(106,2): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(108,2): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(110,2): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(114,3): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(116,3): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(121,3): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(123,3): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(126,2): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(128,2): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(131,2): error C3861: 'GotoXY': identifier not found
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(136,20): warning C4018: '<': signed/unsigned mismatch
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(137,17): error C2660: 'CVEHICLE::draw': function does not take 0 arguments
+D:\OOPK19\ProjectOOP\Project\CVEHICLE.h(22,7): message : see declaration of 'CVEHICLE::draw'
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(139,20): warning C4018: '<': signed/unsigned mismatch
+D:\OOPK19\ProjectOOP\Project\CGAME.cpp(140,15): error C2660: 'CVEHICLE::draw': function does not take 0 arguments
+D:\OOPK19\ProjectOOP\Project\CVEHICLE.h(22,7): message : see declaration of 'CVEHICLE::draw'
+  Console.cpp
+D:\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma 'onces'
+  CPEOPLE.cpp
+D:\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma 'onces'
+D:\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma 'onces'
+D:\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(13,20): warning C4018: '<': signed/unsigned mismatch
+D:\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(23,21): warning C4018: '<': signed/unsigned mismatch
+D:\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(31,21): warning C4018: '<': signed/unsigned mismatch
+D:\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(39,21): warning C4018: '<': signed/unsigned mismatch
+D:\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(47,21): warning C4018: '<': signed/unsigned mismatch
+  CVEHICLE.cpp
+D:\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma 'onces'
+D:\OOPK19\ProjectOOP\Project\CVEHICLE.cpp(6,20): warning C4018: '<': signed/unsigned mismatch
+D:\OOPK19\ProjectOOP\Project\CVEHICLE.cpp(8,21): warning C4018: '<': signed/unsigned mismatch
+D:\OOPK19\ProjectOOP\Project\CVEHICLE.cpp(18,20): warning C4018: '<': signed/unsigned mismatch
+D:\OOPK19\ProjectOOP\Project\CVEHICLE.cpp(36,20): warning C4018: '<': signed/unsigned mismatch
+D:\OOPK19\ProjectOOP\Project\CVEHICLE.cpp(66,20): warning C4018: '<': signed/unsigned mismatch
   main.cpp
-  Project.vcxproj -> D:\OOPK19\ProjectOOP\Debug\Project.exe
+D:\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma 'onces'
+D:\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma 'onces'
+D:\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma 'onces'
+D:\OOPK19\ProjectOOP\Project\main.cpp(9,2): error C3861: 'FixConsoleWindow': identifier not found
+D:\OOPK19\ProjectOOP\Project\main.cpp(12,2): error C2065: 'CONTROL_VEHICLE': undeclared identifier
+D:\OOPK19\ProjectOOP\Project\main.cpp(12,18): error C2146: syntax error: missing ';' before identifier 'myVehicle'
+D:\OOPK19\ProjectOOP\Project\main.cpp(12,18): error C2065: 'myVehicle': undeclared identifier
+D:\OOPK19\ProjectOOP\Project\main.cpp(18,4): error C2065: 'myVehicle': undeclared identifier
+D:\OOPK19\ProjectOOP\Project\main.cpp(20,4): error C2065: 'myVehicle': undeclared identifier
+  Generating Code...
