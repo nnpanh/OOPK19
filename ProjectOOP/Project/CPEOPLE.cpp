@@ -1,97 +1,96 @@
 #include "CPEOPLE.h"
-
-char* CPEOPLE::getCh()
-{
-	return s;
-}
-
+#include "Console.h"
 CPEOPLE::CPEOPLE()
 {
-	//mX = (consoleWidth - strlen(s)) / 2;
-	mX = consoleWidth/ 2;
-	mY = 0;
+	Point p = { WIDTH / 2, HEIGHT - 2 };
+	setPoint(p);
+	state = true;
+	level = 2;
 }
 
-void CPEOPLE::display()
+void CPEOPLE::draw(char key)
 {
-	cout << getCh();
+	for (int i = 0; i < a.size(); i++) {
+		gotoXY(a[i].m_x, a[i].m_y);
+		cout << key;
+	}
+
 }
-int CPEOPLE::getX()
-{
-	return mX;
-}
-int CPEOPLE::getY()
-{
-	return mY;
-}
+
 void CPEOPLE::Up()
 {
-	GotoXY(mX, mY);
-	cout << "  ";
-	mY--;
+	if (a[0].m_y > 5) {
+		for (int i = 0; i < a.size(); i++)
+			a[i].m_y -= 4;
+	}
 }
 
 void CPEOPLE::Left()
 {
-	GotoXY(mX, mY);
-	cout << "  ";
-	mX--;
+	if (a[0].m_x > 5) {
+		for (int i = 0; i < a.size(); i++)
+			a[i].m_x -= 4;
+	}
 }
 
 void CPEOPLE::Right()
 {
-	GotoXY(mX, mY);
-	cout << "  ";
-	mX++;
-}
+	if (a[0].m_x < WIDTH - 5) {
+		for (int i = 0; i < a.size(); i++)
+			a[i].m_x += 4;
+	}
 
+}
 void CPEOPLE::Down()
 {
-	GotoXY(mX, mY);
-	cout << "  ";
-	mY++;
+	if (a[0].m_y < HEIGHT - 5) {
+		for (int i = 0; i < a.size(); i++)
+			a[i].m_y += 4;
+	}
+
 }
  
-void CPEOPLE::Control()
-{
-	ShowConsoleCursor(false);
-	GotoXY(mX,mY);
-	display();
-	if (_kbhit())
-	{
-		char key = _getch();
-		if (key == 'A' || key == 'a' && mX > 0)
-			Left();
-		else if (key == 'D' || key == 'd' && mX < consoleWidth)
-			Right();
-		else if (key == 'W' || key == 'w' && mY > 0)
-			Up();
-		else if (key == 'S' || key == 's' && mY < consoleHeight)
-			Down();
-	}
 
+void CPEOPLE::setPoint(Point p) {
+	a.resize(6);
+	a[0].m_x = p.m_x;
+	a[0].m_y = p.m_y;
+	a[1].m_x = p.m_x - 2;
+	a[1].m_y = p.m_y;
+	a[2].m_x = p.m_x;
+	a[2].m_y = p.m_y - 1;
+	a[3].m_x = p.m_x - 1;
+	a[3].m_y = p.m_y - 1;
+	a[4].m_x = p.m_x - 2;
+	a[4].m_y = p.m_y - 1;
+	a[5].m_x = p.m_x - 1;
+	a[5].m_y = p.m_y - 2;
 }
+void CPEOPLE::setState(bool state) {
+	state = state;
+}
+void CPEOPLE::setLevel(int lv) {
+	level = lv;
+}
+
 bool CPEOPLE::isFinish()
 {
-	if (mY < 0)
-		return true;
-	return false;
+	return (level == MAX_LEVEL);
+}
+bool CPEOPLE::isDead()
+{
+	return !state;
 }
 
-void ShowConsoleCursor(bool showFlag)
-{
-	HANDLE out = GetStdHandle(STD_OUTPUT_HANDLE);
-	CONSOLE_CURSOR_INFO     cursorInfo;
-	GetConsoleCursorInfo(out, &cursorInfo);
-	cursorInfo.bVisible = showFlag; // set the cursor visibility
-	SetConsoleCursorInfo(out, &cursorInfo);
+bool CPEOPLE::isLevelUp() {
+	return (level < MAX_LEVEL&& a[0].m_y == 3);
 }
-
-void doPeople()
-{
-	CPEOPLE x;
-	while (1)
-	{
-		x.Control();
-	}
+int& CPEOPLE::getLevel() {
+	return level;
+}
+Point& CPEOPLE::getFirstPoint() {
+	return a[0];
+}
+bool& CPEOPLE::getState() {
+	return state;
 }
