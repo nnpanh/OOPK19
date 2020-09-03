@@ -1,54 +1,59 @@
 ﻿#pragma once
-#ifndef _CGAME_H_
-#define _CGAME_H_
-
-#include <iostream>
-#include <conio.h>
-#include <Windows.h> // Main of the board
-#include <time.h>
-#include <stdlib.h>
-#include <string>
-#include <thread>
-#include <fstream>
-#include <malloc.h>
-#include "CVEHICLE.h"
-#include "Console.h"
 #include "CPEOPLE.h"
+#include "CANIMAL.h"
+#include "CVEHICLE.h"
+#include <fstream>
+#include <sstream>
 
-int HEIGHT_CONSOLE = 25, WIDTH_CONSOLE = 70;
-using namespace std;
-
-HANDLE consolehandle = GetStdHandle(STD_OUTPUT_HANDLE);
-
-
-class CGAME {
-	vector<CTRUCK> truck;
-	vector<CCAR> car;
-	/*vector<CDINAUSOR> dinausor;*/
-	/*vector<CBIRD> bird;*/
-	CPEOPLE people;
+class Game
+{
+private:
+	vector <CTRUCK> m_truck;
+	vector <CCAR> m_car;
+	vector <Dinausor> m_dinausor;
+	vector <Bird> m_bird;
+	Traffic m_trafficLight;
+	CPEOPLE m_people;
 public:
-	CGAME(); //Chuẩn bị dữ liệu cho tất cả các đối tượng
-	void DrawBoardGame(int x, int y, int width, int height); //Thực hiện vẽ trò chơi ra màn hình sau khi có dữ liệu
-	void drawGame(char); //ve nguoi xe thu
-	//~CGAME(); // Hủy tài nguyên đã cấp phát
+	Game();
+
+	//resize the vector
+	void resize(int);
+
+	//draw people, animals and vehicles
+	void drawGame(char);
+
+	//get the information of people, vehicles and animal
 	CPEOPLE& getPeople();
 	vector <CTRUCK>& getTruck();
 	vector <CCAR>& getCar();
-	//vector <CDinausor>& getDinausor();
-	//vector <CBird>& getBird();
+	vector <Dinausor>& getDinausor();
+	vector <Bird>& getBird();
+	Traffic & getTrafficLight();
 
-//	void resetGame(); // havent done 
+	//reset the game to the beginning
+	void resetGame();
 
-	void exitGame(HANDLE); // Thực hiện thoát Thread
-	void startGame(); // Thực hiện bắt đầu vào trò chơi
-	////void loadGame(istream); // Thực hiện tải lại trò chơi đã lưu
-	////void saveGame(istream); // Thực hiện lưu lại dữ liệu trò chơi
+	//exit the game
+	void exitGame(HANDLE);
 
-	void pauseGame(HANDLE); // Tạm dừng Thread
-	void resumeGame(HANDLE); //Quay lai Thread
-	//void updatePosPeople(char); //Thực hiện điều khiển di chuyển của CPEOPLE
-	//void updatePosVehicle(); //Thực hiện cho CTRUCK & CCAR di chuyển
-	//void updatePosAnimal();//Thực hiện cho CDINAUSOR & CBIRD di chuyển
+	//start the game
+	void startGame();
+
+	//load the exist data from the *.txt file
+	void loadGame(string);
+
+	//save the game to the *.txt file
+	void saveGame(string);
+
+	//pause the game
+	void pauseGame(HANDLE);
+
+	//resume the game
+	void resumeGame(HANDLE);
+
+	//update the new position of object
+	void updatePosPeople(char);
+	void updatePosVehicle();
+	void updatePosAnimal();
 };
-#endif
