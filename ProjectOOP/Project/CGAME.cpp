@@ -14,23 +14,18 @@ void Game::resize(int newSize) {
 }
 
 void Game::drawGame(char key) {
-	setColor(1);
 	for (int i = 0; i < m_truck.size(); i++) {
 		m_truck[i].draw(key);
 	}
-	setColor(2);
 	for (int i = 0; i < m_car.size(); i++) {
 		m_car[i].draw(key);
 	}
-	setColor(3);
 	for (int i = 0; i < m_dinausor.size(); i++) {
 		m_dinausor[i].draw(key);
 	}
-	setColor(4);
 	for (int i = 0; i < m_bird.size(); i++) {
 		m_bird[i].draw(key);
 	}
-	setColor(5);
 	m_people.draw(key);
 	getTrafficLight().drawLight(1, 17, 219);
 	getTrafficLight().drawLight(WIDTH - 2, 13, 219);
@@ -188,3 +183,42 @@ void Game::saveGame(string fileName) {
 	}
 }
 
+void Game::pauseGame(HANDLE t)
+{
+	SuspendThread(t);
+}
+
+//resume the game
+void Game::resumeGame(HANDLE t)
+{
+	ResumeThread(t);
+}
+
+void Game::updatePosPeople(char key) {
+	switch (key) {
+	case 'A':
+		m_people.Left();
+		break;
+	case 'D':
+		m_people.Right();
+		break;
+	case 'W':
+		m_people.Up();
+		break;
+	case 'S':
+		m_people.Down();
+		break;
+	}
+}
+void Game::updatePosVehicle() {
+	for (int i = 0; i < m_truck.size(); i++)
+		m_truck[i].move();
+	for (int i = 0; i < m_car.size(); i++)
+		m_car[i].move();
+}
+void Game::updatePosAnimal() {
+	for (int i = 0; i < m_bird.size(); i++)
+		m_bird[i].move();
+	for (int i = 0; i < m_dinausor.size(); i++)
+		m_dinausor[i].move();
+}

@@ -1,51 +1,21 @@
-﻿  CANIMAL.cpp
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CANIMAL.cpp(4,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CANIMAL.cpp(5,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CANIMAL.cpp(14,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CANIMAL.cpp(29,20): warning C4018: '<': signed/unsigned mismatch
-  CGAME.cpp
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CANIMAL.cpp(50,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CGAME.cpp(18,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CGAME.cpp(22,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CGAME.cpp(26,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CGAME.cpp(30,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CGAME.cpp(59,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CGAME.cpp(63,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CGAME.cpp(67,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CGAME.cpp(71,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CGAME.cpp(164,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CGAME.cpp(168,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CGAME.cpp(172,21): warning C4018: '<': signed/unsigned mismatch
-  Console.cpp
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CGAME.cpp(176,21): warning C4018: '<': signed/unsigned mismatch
-  CPEOPLE.cpp
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(13,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(23,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(31,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(39,21): warning C4018: '<': signed/unsigned mismatch
-  CVEHICLE.cpp
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(47,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CVEHICLE.cpp(6,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CVEHICLE.cpp(8,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CVEHICLE.cpp(18,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CVEHICLE.cpp(36,20): warning C4018: '<': signed/unsigned mismatch
-  main.cpp
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\CVEHICLE.cpp(66,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\main.cpp(9,2): error C3861: 'FixConsoleWindow': identifier not found
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\main.cpp(12,2): error C2065: 'CONTROL_VEHICLE': undeclared identifier
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\main.cpp(12,18): error C2146: syntax error: missing ';' before identifier 'myVehicle'
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\main.cpp(12,18): error C2065: 'myVehicle': undeclared identifier
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\main.cpp(18,4): error C2065: 'myVehicle': undeclared identifier
-  Generating Code...
-C:\Users\Admin\source\repos\OOPK19\ProjectOOP\Project\main.cpp(20,4): error C2065: 'myVehicle': undeclared identifier
+﻿  CGAME.cpp
+D:\MINH\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma 'onces'
+D:\MINH\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma 'onces'
+D:\MINH\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma 'onces'
+D:\MINH\OOPK19\ProjectOOP\Project\CGAME.cpp(17,20): warning C4018: '<': signed/unsigned mismatch
+D:\MINH\OOPK19\ProjectOOP\Project\CGAME.cpp(20,20): warning C4018: '<': signed/unsigned mismatch
+D:\MINH\OOPK19\ProjectOOP\Project\CGAME.cpp(23,20): warning C4018: '<': signed/unsigned mismatch
+D:\MINH\OOPK19\ProjectOOP\Project\CGAME.cpp(26,20): warning C4018: '<': signed/unsigned mismatch
+D:\MINH\OOPK19\ProjectOOP\Project\CGAME.cpp(54,20): warning C4018: '<': signed/unsigned mismatch
+D:\MINH\OOPK19\ProjectOOP\Project\CGAME.cpp(58,20): warning C4018: '<': signed/unsigned mismatch
+D:\MINH\OOPK19\ProjectOOP\Project\CGAME.cpp(62,20): warning C4018: '<': signed/unsigned mismatch
+D:\MINH\OOPK19\ProjectOOP\Project\CGAME.cpp(66,20): warning C4018: '<': signed/unsigned mismatch
+D:\MINH\OOPK19\ProjectOOP\Project\CGAME.cpp(159,21): warning C4018: '<': signed/unsigned mismatch
+D:\MINH\OOPK19\ProjectOOP\Project\CGAME.cpp(163,21): warning C4018: '<': signed/unsigned mismatch
+D:\MINH\OOPK19\ProjectOOP\Project\CGAME.cpp(167,21): warning C4018: '<': signed/unsigned mismatch
+D:\MINH\OOPK19\ProjectOOP\Project\CGAME.cpp(171,21): warning C4018: '<': signed/unsigned mismatch
+D:\MINH\OOPK19\ProjectOOP\Project\CGAME.cpp(214,20): warning C4018: '<': signed/unsigned mismatch
+D:\MINH\OOPK19\ProjectOOP\Project\CGAME.cpp(216,20): warning C4018: '<': signed/unsigned mismatch
+D:\MINH\OOPK19\ProjectOOP\Project\CGAME.cpp(220,20): warning C4018: '<': signed/unsigned mismatch
+D:\MINH\OOPK19\ProjectOOP\Project\CGAME.cpp(222,20): warning C4018: '<': signed/unsigned mismatch
+  Project.vcxproj -> D:\MINH\OOPK19\ProjectOOP\Debug\Project.exe
