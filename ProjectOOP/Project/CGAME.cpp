@@ -144,6 +144,11 @@ void Game::loadGame(string fileName) {
 		m_people.setLevel(level);
 		myfile.close();
 	}
+	else {
+		gotoXY(WIDTH / 2 - 10, HEIGHT / 2 + 1);
+		cout << "Khong the tim thay file: " << fileName << endl;
+		exit(0);
+	}
 }
 
 void Game::saveGame(string fileName) {
