@@ -3,9 +3,9 @@
 //VEHICLE
 bool CVEHICLE::isImpact(vector<Point>p)
 {
-	for (int i = 0; i < p.size(); i++)
+	for (auto i = 0; i < p.size(); i++)
 	{
-		for (int j = 0; j < a.size(); j++)
+		for (auto j = 0; j < a.size(); j++)
 		{
 			if (p[i].m_x == a[j].m_x && p[i].m_y == a[j].m_y)
 				return true;
@@ -15,7 +15,7 @@ bool CVEHICLE::isImpact(vector<Point>p)
 }
 void CVEHICLE::draw(char key)
 {
-	for (int i = 0; i < a.size(); i++)
+	for (auto i = 0; i < a.size(); i++)
 	{
 		gotoXY(a[i].m_x, a[i].m_y);
 		cout << key;
@@ -33,7 +33,7 @@ CTRUCK::CTRUCK() :CVEHICLE()
 }
 void CTRUCK::move()
 {
-	for (int i = 0; i < a.size(); i++)
+	for (auto i = 0; i < a.size(); i++)
 	{
 		if (a[i].m_x == 1)
 			a[i].m_x = WIDTH - 2;
@@ -58,19 +58,21 @@ void CTRUCK::set(Point p)
 
 
 //CAR
-CCAR::CCAR():CVEHICLE() {
+CCAR::CCAR():CVEHICLE() 
+{
 	a.resize(6);
 }
 void CCAR::move()
 {
-	for (int i = 0; i < a.size(); i++) {
+	for (auto i = 0; i < a.size(); i++) {
 		if (a[i].m_x == WIDTH - 2)
 			a[i].m_x = 1;
 		else
 			a[i].m_x++;
 	}
 }
-void CCAR::set(Point p) {
+void CCAR::set(Point p) 
+{
 	a.resize(6);
 	a[0].m_x = p.m_x;
 	a[0].m_y = p.m_y;
@@ -88,13 +90,16 @@ void CCAR::set(Point p) {
 
 
 //TRAFFIC LIGHT
-void Traffic::drawLight(int x, int y, int key) {
+void Traffic::drawLight(int x, int y, int key) 
+{
 	gotoXY(x, y);
-	if (trafficLight != 0) {
+	if (trafficLight != 0) 
+	{
 		setColor(2);
 		cout << char(key);
 	}
-	else {
+	else 
+	{
 		setColor(4);
 		cout << char(key);
 	}
