@@ -1,9 +1,8 @@
-﻿  CPEOPLE.cpp
+﻿  CVEHICLE.cpp
 D:\MINH\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma 'onces'
-D:\MINH\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma 'onces'
-D:\MINH\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(17,20): warning C4018: '<': signed/unsigned mismatch
-D:\MINH\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(30,21): warning C4018: '<': signed/unsigned mismatch
-D:\MINH\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(38,21): warning C4018: '<': signed/unsigned mismatch
-D:\MINH\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(46,21): warning C4018: '<': signed/unsigned mismatch
-D:\MINH\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(54,21): warning C4018: '<': signed/unsigned mismatch
+D:\MINH\OOPK19\ProjectOOP\Project\CVEHICLE.cpp(6,21): warning C4018: '<': signed/unsigned mismatch
+D:\MINH\OOPK19\ProjectOOP\Project\CVEHICLE.cpp(8,22): warning C4018: '<': signed/unsigned mismatch
+D:\MINH\OOPK19\ProjectOOP\Project\CVEHICLE.cpp(18,20): warning C4018: '<': signed/unsigned mismatch
+D:\MINH\OOPK19\ProjectOOP\Project\CVEHICLE.cpp(39,21): warning C4018: '<': signed/unsigned mismatch
+D:\MINH\OOPK19\ProjectOOP\Project\CVEHICLE.cpp(80,21): warning C4018: '<': signed/unsigned mismatch
   Project.vcxproj -> D:\MINH\OOPK19\ProjectOOP\Debug\Project.exe

@@ -59,14 +59,17 @@ void CPEOPLE::Down()
  
 
 void CPEOPLE::setPoint(Point p) {
-	a.resize(6);
+	a.resize(5);
 	a[0].m_x = p.m_x;
 	a[0].m_y = p.m_y;
 	a[1].m_x = p.m_x;
 	a[1].m_y = p.m_y-1;
 	a[2].m_x = p.m_x;
 	a[2].m_y = p.m_y - 2;
-
+	a[3].m_x = p.m_x - 1;
+	a[3].m_y = p.m_y - 1;
+	a[4].m_x = p.m_x + 1;
+	a[4].m_y = p.m_y - 1;
 	/*a[1].m_x = p.m_x - 2;
 	a[1].m_y = p.m_y;
 	a[2].m_x = p.m_x;
@@ -81,6 +84,9 @@ void CPEOPLE::setPoint(Point p) {
 	a[0].data = (char)208;
 	a[1].data = (char)178;
 	a[2].data = (char)234;
+	a[3].data = (char)195;
+	a[4].data = (char)180;
+
 }
 void CPEOPLE::setState(bool state) {
 	state = state;

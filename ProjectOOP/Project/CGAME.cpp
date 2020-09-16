@@ -60,11 +60,11 @@ void Game::resetGame() {
 		m_dinausor[i].set(p);
 	}
 	for (int i = 0; i < m_car.size(); i++) {
-		p.m_x = 15 * i + 2; p.m_y = 15;
+		p.m_x = 15 * i + 2; p.m_y = 14;
 		m_car[i].set(p);
 	}
 	for (int i = 0; i < m_truck.size(); i++) {
-		p.m_x = WIDTH - 5 - 15 * i; p.m_y = 19;
+		p.m_x = WIDTH - 5 - 15 * i; p.m_y = 18;
 		m_truck[i].set(p);
 	}
 	p.m_x = WIDTH / 2; p.m_y = 23;

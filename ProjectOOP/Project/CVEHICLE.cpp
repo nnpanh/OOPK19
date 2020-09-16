@@ -15,10 +15,13 @@ bool CVEHICLE::isImpact(vector<Point>p)
 }
 void CVEHICLE::draw(char key)
 {
-	for (auto i = 0; i < a.size(); i++)
+	for (int i = 0; i < a.size(); i++)
 	{
 		gotoXY(a[i].m_x, a[i].m_y);
-		cout << key;
+		if (key != (char)255)
+			cout << a[i].data;
+		else
+			cout << key;
 	}
 }
 Point CVEHICLE::getFirstPoint()
@@ -43,7 +46,7 @@ void CTRUCK::move()
 }
 void CTRUCK::set(Point p)
 {
-	a.resize(5);
+	a.resize(7);
 	a[0].m_x = p.m_x;
 	a[0].m_y = p.m_y;
 	a[1].m_x = p.m_x + 1;
@@ -54,6 +57,16 @@ void CTRUCK::set(Point p)
 	a[3].m_y = p.m_y - 1;
 	a[4].m_x = p.m_x + 2;
 	a[4].m_y = p.m_y - 1;
+
+	a[5].m_x = p.m_x;
+	a[5].m_y = p.m_y + 1;
+	a[6].m_x = p.m_x + 2;
+	a[6].m_y = p.m_y + 1;
+
+	a[0].data = a[1].data = a[2].data = a[3].data = a[4].data = (char)219;
+
+	a[5].data = a[6].data = 'O';
+
 }
 
 
@@ -73,7 +86,7 @@ void CCAR::move()
 }
 void CCAR::set(Point p) 
 {
-	a.resize(6);
+	a.resize(10);
 	a[0].m_x = p.m_x;
 	a[0].m_y = p.m_y;
 	a[1].m_x = p.m_x + 1;
@@ -86,6 +99,14 @@ void CCAR::set(Point p)
 	a[4].m_y = p.m_y - 1;
 	a[5].m_x = p.m_x + 2;
 	a[5].m_y = p.m_y - 1;
+
+	a[6].m_x = p.m_x;
+	a[6].m_y = p.m_y + 1;
+	a[7].m_x = p.m_x + 3;
+	a[7].m_y = p.m_y + 1;
+
+	a[0].data = a[1].data = a[2].data = a[3].data = a[4].data = a[5].data = (char)219;
+	a[6].data = a[7].data = 'O';
 }
 
 
