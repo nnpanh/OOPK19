@@ -9,10 +9,17 @@ CPEOPLE::CPEOPLE()
 }
 
 void CPEOPLE::draw(char key)
-{
+{	/*
+	if (key != (char)255)
+		key = (char)254;
+	else
+		key = (char)255;*/
 	for (int i = 0; i < a.size(); i++) {
 		gotoXY(a[i].m_x, a[i].m_y);
-		cout << key;
+		if (key != (char)255)
+			cout << a[i].data;
+		else
+			cout << key;
 	}
 
 }
@@ -55,7 +62,12 @@ void CPEOPLE::setPoint(Point p) {
 	a.resize(6);
 	a[0].m_x = p.m_x;
 	a[0].m_y = p.m_y;
-	a[1].m_x = p.m_x - 2;
+	a[1].m_x = p.m_x;
+	a[1].m_y = p.m_y-1;
+	a[2].m_x = p.m_x;
+	a[2].m_y = p.m_y - 2;
+
+	/*a[1].m_x = p.m_x - 2;
 	a[1].m_y = p.m_y;
 	a[2].m_x = p.m_x;
 	a[2].m_y = p.m_y - 1;
@@ -64,7 +76,11 @@ void CPEOPLE::setPoint(Point p) {
 	a[4].m_x = p.m_x - 2;
 	a[4].m_y = p.m_y - 1;
 	a[5].m_x = p.m_x - 1;
-	a[5].m_y = p.m_y - 2;
+	a[5].m_y = p.m_y - 2;*/
+
+	a[0].data = (char)208;
+	a[1].data = (char)178;
+	a[2].data = (char)234;
 }
 void CPEOPLE::setState(bool state) {
 	state = state;

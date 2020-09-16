@@ -18,6 +18,7 @@ const int HEIGHT = 25;
 struct Point
 {
 	int m_x, m_y;
+	char data;
 };
 
 //void clrscr();

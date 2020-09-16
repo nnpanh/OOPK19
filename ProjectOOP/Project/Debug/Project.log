@@ -1,10 +1,9 @@
 ﻿  CPEOPLE.cpp
 D:\MINH\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma 'onces'
 D:\MINH\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma 'onces'
-D:\MINH\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(14,9): warning C4309: '=': truncation of constant value
-D:\MINH\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(16,20): warning C4018: '<': signed/unsigned mismatch
-D:\MINH\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(26,21): warning C4018: '<': signed/unsigned mismatch
-D:\MINH\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(34,21): warning C4018: '<': signed/unsigned mismatch
-D:\MINH\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(42,21): warning C4018: '<': signed/unsigned mismatch
-D:\MINH\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(50,21): warning C4018: '<': signed/unsigned mismatch
+D:\MINH\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(17,20): warning C4018: '<': signed/unsigned mismatch
+D:\MINH\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(30,21): warning C4018: '<': signed/unsigned mismatch
+D:\MINH\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(38,21): warning C4018: '<': signed/unsigned mismatch
+D:\MINH\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(46,21): warning C4018: '<': signed/unsigned mismatch
+D:\MINH\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(54,21): warning C4018: '<': signed/unsigned mismatch
   Project.vcxproj -> D:\MINH\OOPK19\ProjectOOP\Debug\Project.exe
