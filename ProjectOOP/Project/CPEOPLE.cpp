@@ -74,8 +74,8 @@ void CPEOPLE::setPoint(Point p) {
 	a[4].data = (char)180;
 
 }
-void CPEOPLE::setState(bool state) {
-	state = state;
+void CPEOPLE::setState(bool stat) {
+	state = stat;
 }
 void CPEOPLE::setLevel(int lv) {
 	level = lv;

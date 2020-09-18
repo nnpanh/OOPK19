@@ -41,8 +41,8 @@ void subThread() {
 				g->getPeople().isImpact(g->getBird()) ||
 				g->getPeople().isImpact(g->getDinausor())) {
 				if (sound) {
-					mciSendString(TEXT("stop BACKGROUND.mp3"), NULL, 0, 0);
-					mciSendString(TEXT("play Endgame.mp3"), NULL, 0, 0);
+					mciSendString(TEXT("stop BACKGROUND.mp3"), NULL, 0, NULL);
+					mciSendString(TEXT("play Endgame.mp3"), NULL, 0, NULL);
 				}
 				animation(0, 0, WIDTH, HEIGHT, 0, 0);
 				gotoXY(0, HEIGHT + 1);
@@ -88,9 +88,9 @@ int main() {
 	setColor(15);
 	drawBox(0, 0, WIDTH, HEIGHT, 0, 0);
 	setColor(2);
-	/*if (sound) {
+	if (sound) {
 		mciSendString(TEXT("play BACKGROUND.mp3 repeat"), NULL, 0, NULL);
-	}*/
+	}
 	setColor(15);
 	system("cls");
 	drawBox(0, 0, WIDTH, HEIGHT, 0, 0);
@@ -406,7 +406,7 @@ int main() {
 	}
 	g->resumeGame(handle_t1);
 	while (1) {
-		temp = toupper(getch());
+		temp = toupper(_getch());
 		if (!g->getPeople().isDead()) {
 			if (temp == 27) {
 				g->exitGame(handle_t1);
@@ -415,7 +415,7 @@ int main() {
 			else if (temp == 'P') {
 				g->pauseGame(handle_t1);
 			}
-			else if (temp == 'L' || temp == 'T') {
+			else if (temp == 'S' || temp == 'L') {
 				g->pauseGame(handle_t1);
 				setColor(15);
 				system("cls");
@@ -423,7 +423,7 @@ int main() {
 				string fileName;
 				cout << "Nhap ten file: ";
 				cin >> fileName;
-				if (temp == 'L')
+				if (temp == 'S')
 					g->saveGame(fileName);
 				else
 					g->loadGame(fileName);
@@ -437,7 +437,7 @@ int main() {
 				MOVING = temp;
 			}
 		}
-		else {
+		else{
 			g->pauseGame(handle_t1);
 			if (temp == 'Y') {
 				g->getPeople().setState(true);

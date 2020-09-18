@@ -1,3 +1,12 @@
-﻿  Console.cpp
+﻿  main.cpp
 D:\MINH\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma 'onces'
+D:\MINH\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma 'onces'
+D:\MINH\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma 'onces'
+D:\MINH\OOPK19\ProjectOOP\Project\main.cpp(18,16): warning C4309: 'argument': truncation of constant value
+D:\MINH\OOPK19\ProjectOOP\Project\main.cpp(38,16): warning C4309: 'argument': truncation of constant value
+D:\MINH\OOPK19\ProjectOOP\Project\main.cpp(53,17): warning C4309: 'argument': truncation of constant value
+D:\MINH\OOPK19\ProjectOOP\Project\main.cpp(59,17): warning C4309: 'argument': truncation of constant value
+D:\MINH\OOPK19\ProjectOOP\Project\main.cpp(432,17): warning C4309: 'argument': truncation of constant value
+D:\MINH\OOPK19\ProjectOOP\Project\CPEOPLE.h(24,21): warning C4018: '<': signed/unsigned mismatch
+D:\MINH\OOPK19\ProjectOOP\Project\main.cpp(39): message : see reference to function template instantiation 'bool CPEOPLE::isImpact<CTRUCK>(std::vector<CTRUCK,std::allocator<CTRUCK>>)' being compiled
   Project.vcxproj -> D:\MINH\OOPK19\ProjectOOP\Debug\Project.exe
