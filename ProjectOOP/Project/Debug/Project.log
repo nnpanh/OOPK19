@@ -1,3 +1,9 @@
-﻿  Console.cpp
-D:\MINH\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma 'onces'
-  Project.vcxproj -> D:\MINH\OOPK19\ProjectOOP\Debug\Project.exe
+﻿  CPEOPLE.cpp
+C:\Users\84898\Documents\GitHub\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma
+C:\Users\84898\Documents\GitHub\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma
+C:\Users\84898\Documents\GitHub\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(13,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\84898\Documents\GitHub\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(26,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\84898\Documents\GitHub\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(34,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\84898\Documents\GitHub\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(42,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\84898\Documents\GitHub\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(50,21): warning C4018: '<': signed/unsigned mismatch
+  Project.vcxproj -> C:\Users\84898\Documents\GitHub\OOPK19\ProjectOOP\Debug\Project.exe

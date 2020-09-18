@@ -88,9 +88,9 @@ int main() {
 	setColor(15);
 	drawBox(0, 0, WIDTH, HEIGHT, 0, 0);
 	setColor(2);
-	/*if (sound) {
+	if (sound) {
 		mciSendString(TEXT("play BACKGROUND.mp3 repeat"), NULL, 0, NULL);
-	}*/
+	}
 	setColor(15);
 	system("cls");
 	drawBox(0, 0, WIDTH, HEIGHT, 0, 0);
