@@ -40,10 +40,10 @@ void subThread() {
 				g->getPeople().isImpact(g->getCar()) ||
 				g->getPeople().isImpact(g->getBird()) ||
 				g->getPeople().isImpact(g->getDinausor())) {
-				/*if (sound) {
-					mciSendString(TEXT("stop Background.mp3"), NULL, 0, NULL);
-					mciSendString(TEXT("play Endgame.mp3"), NULL, 0, NULL);
-				}*/
+				if (sound) {
+					mciSendString(TEXT("stop BACKGROUND.mp3"), NULL, 0, 0);
+					mciSendString(TEXT("play Endgame.mp3"), NULL, 0, 0);
+				}
 				animation(0, 0, WIDTH, HEIGHT, 0, 0);
 				gotoXY(0, HEIGHT + 1);
 				cout << "Dead, press Y to start a new game!";
@@ -61,7 +61,7 @@ void subThread() {
 				g->resize(g->getPeople().getLevel());
 				g->resetGame();
 			}
-			/*if (timeTraffic == 70) {
+			if (timeTraffic == 70) {
 				if (sound) {
 					mciSendString(TEXT("play BIRD.mp3"), NULL, 0, NULL);
 				}
@@ -70,7 +70,7 @@ void subThread() {
 				if (sound) {
 					mciSendString(TEXT("play DINAUSOR.mp3"), NULL, 0, NULL);
 				}
-			}*/
+			}
 			if (timeTraffic == 200)
 				timeTraffic = 0;
 			else
@@ -80,7 +80,7 @@ void subThread() {
 	}
 }
 
-void main() {
+int main() {
 	int temp;
 	g = new Game();
 	fixConsoleWindow();
@@ -88,7 +88,6 @@ void main() {
 	setColor(15);
 	drawBox(0, 0, WIDTH, HEIGHT, 0, 0);
 	setColor(2);
-	//loading(0, 0, WIDTH, HEIGHT, 0, 0);
 	/*if (sound) {
 		mciSendString(TEXT("play BACKGROUND.mp3 repeat"), NULL, 0, NULL);
 	}*/
@@ -96,20 +95,8 @@ void main() {
 	system("cls");
 	drawBox(0, 0, WIDTH, HEIGHT, 0, 0);
 	gotoXY(WIDTH / 2 - 5, HEIGHT / 2 - 3);
-	//draw word "crossy road"
 	setColor(9);
 	gotoXY(10, 2);
-	/*cout << "                                                                  .___";
-	gotoXY(10, 3);
-	cout << "  ___________  ____  ______ _________.__. _______  _________    __| _/";
-	gotoXY(10, 4);
-	cout << "_/ ___\\_  __ \\/  _ \\/  ___//  ___<   |  | \\_  __ \\/  _ \\__  \\  / __ | ";
-	gotoXY(10, 5);
-	cout << "\\  \\___|  | \\(  <_> )___ \\ \\___ \\ \\___  |  |  | \\(  <_> ) __ \\/ /_/ | ";
-	gotoXY(10, 6);
-	cout << " \\___  >__|   \\____/____  >____  >/ ____|  |__|   \\____(____  |____ | ";
-	gotoXY(10, 7);
-	cout << "     \\/                 \\/     \\/ \\/                        \\/     \\/ ";*/
 	gotoXY(WIDTH / 2 - 5, HEIGHT / 2 - 1);
 	setColor(128);
 	cout << "Start Game";
@@ -313,7 +300,7 @@ void main() {
 										curSound = 0;
 									}
 								}
-								/*else if (temp == 13) {
+								else if (temp == 13) {
 									if (curSound == 0) {
 										sound = true;
 										mciSendString(TEXT("play BACKGROUND.mp3 repeat"), NULL, 0, NULL);
@@ -322,7 +309,7 @@ void main() {
 										sound = false;
 										mciSendString(TEXT("stop BACKGROUND.mp3"), NULL, 0, NULL);
 									}
-								}*/
+								}
 								else if (temp == 27) {
 									setColor(0);
 									gotoXY(WIDTH / 2 + 5, HEIGHT / 2 + 2);
@@ -458,9 +445,9 @@ void main() {
 				g->resize(2);
 				g->startGame();
 				g->resumeGame(handle_t1);
-				/*if (sound) {
+				if (sound) {
 					mciSendString(TEXT("play BACKGROUND.mp3 repeat"), NULL, 0, NULL);
-				}*/
+				}
 			}
 			else {
 				g->exitGame(handle_t1);

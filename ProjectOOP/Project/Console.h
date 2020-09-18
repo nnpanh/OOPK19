@@ -21,9 +21,6 @@ struct Point
 	char data;
 };
 
-//void clrscr();
-
-//void draw_ambulance();
 
 //lock ratio
 void fixConsoleWindow();
@@ -42,9 +39,6 @@ void drawBox(int, int, int, int, int, int);
 
 //Animation when dead
 void animation(int, int, int, int, int, int);
-
-//load animation
-void loading(int, int, int, int, int, int);
 
 //Make the cursor disappear
 void ShowConsoleCursor(bool showFlag);

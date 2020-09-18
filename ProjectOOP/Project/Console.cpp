@@ -80,8 +80,7 @@ void drawBox(int startPosX, int startPosY, int w, int h, int endPosX, int endPos
 
 void animation(int startPosX, int startPosY, int w, int h, int endPosX, int endPosY)
 {
-	int i;
-	for (i = 70; i > 0; i--)
+	for (int i = 70; i > 0; i--)
 	{
 		gotoXY(i, 10);
 		cout << "           ____________________" << " ";
@@ -101,21 +100,8 @@ void animation(int startPosX, int startPosY, int w, int h, int endPosX, int endP
 		cout << "|__/   \\__|___________/   \\____|" << " ";
 		gotoXY(i, 18);
 		cout << "   \\___/ ____________ \\___/" << "______" << "---GAMEOVER---" << "_______";
-		Sleep(100);
+		Sleep(20);
 	}
-}
-
-void loading(int startPosX, int startPosY, int w, int h, int endPosX, int endPosY)
-{
-	gotoXY(w / 2 - 5, h / 2 - 1);
-	cout << "Loading game ahihi...";
-	for (int i = 0; i < 30; i++)
-	{
-		gotoXY(w / 2 - 15 + i, h / 2);
-		cout << char(219);
-		Sleep(100);
-	}
-	setColor(16);
 }
 
 void ShowConsoleCursor(bool showFlag)

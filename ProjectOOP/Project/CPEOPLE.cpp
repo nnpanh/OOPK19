@@ -9,11 +9,7 @@ CPEOPLE::CPEOPLE()
 }
 
 void CPEOPLE::draw(char key)
-{	/*
-	if (key != (char)255)
-		key = (char)254;
-	else
-		key = (char)255;*/
+{
 	for (int i = 0; i < a.size(); i++) {
 		gotoXY(a[i].m_x, a[i].m_y);
 		if (key != (char)255)
@@ -70,16 +66,6 @@ void CPEOPLE::setPoint(Point p) {
 	a[3].m_y = p.m_y - 1;
 	a[4].m_x = p.m_x + 1;
 	a[4].m_y = p.m_y - 1;
-	/*a[1].m_x = p.m_x - 2;
-	a[1].m_y = p.m_y;
-	a[2].m_x = p.m_x;
-	a[2].m_y = p.m_y - 1;
-	a[3].m_x = p.m_x - 1;
-	a[3].m_y = p.m_y - 1;
-	a[4].m_x = p.m_x - 2;
-	a[4].m_y = p.m_y - 1;
-	a[5].m_x = p.m_x - 1;
-	a[5].m_y = p.m_y - 2;*/
 
 	a[0].data = (char)208;
 	a[1].data = (char)178;
