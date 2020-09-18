@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  main.cpp
 D:\MINH\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma 'onces'
 D:\MINH\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma 'onces'
@@ -10,3 +11,14 @@ D:\MINH\OOPK19\ProjectOOP\Project\main.cpp(432,17): warning C4309: 'argument': t
 D:\MINH\OOPK19\ProjectOOP\Project\CPEOPLE.h(24,21): warning C4018: '<': signed/unsigned mismatch
 D:\MINH\OOPK19\ProjectOOP\Project\main.cpp(39): message : see reference to function template instantiation 'bool CPEOPLE::isImpact<CTRUCK>(std::vector<CTRUCK,std::allocator<CTRUCK>>)' being compiled
   Project.vcxproj -> D:\MINH\OOPK19\ProjectOOP\Debug\Project.exe
+=======
+﻿  CPEOPLE.cpp
+C:\Users\84898\Documents\GitHub\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma
+C:\Users\84898\Documents\GitHub\OOPK19\ProjectOOP\Project\Console.h(1,9): warning C4068: unknown pragma
+C:\Users\84898\Documents\GitHub\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(13,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\84898\Documents\GitHub\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(26,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\84898\Documents\GitHub\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(34,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\84898\Documents\GitHub\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(42,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\84898\Documents\GitHub\OOPK19\ProjectOOP\Project\CPEOPLE.cpp(50,21): warning C4018: '<': signed/unsigned mismatch
+  Project.vcxproj -> C:\Users\84898\Documents\GitHub\OOPK19\ProjectOOP\Debug\Project.exe
+>>>>>>> 8bbdb4bfb3521927fe648f11b19b7b089e02b2fd
